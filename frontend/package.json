@@ -1,0 +1,31 @@
+{
+  "name": "static-website-template",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "autoprefixer": "^10.4.13",
+    "dayjs": "^1.11.6",
+    "next": "^13.0.5",
+    "postcss": "^8.4.19",
+    "qs": "^6.11.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-markdown": "^8.0.3",
+    "sharp": "^0.31.2",
+    "tailwindcss": "^3.2.4"
+  },
+  "devDependencies": {
+    "eslint": "8.28.0",
+    "eslint-config-next": "13.0.5",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1"
+  },
+  "scripts": {
+    "pretty": "prettier --write \"./**/*.{js,jsx,json}\"",
+    "lint": "next lint",
+    "start": "next dev",
+    "build": "next build",
+    "serve": "next start"
+  }
+}
