@@ -1,9 +1,9 @@
 import App from 'next/app'
 import Head from 'next/head'
 import { createContext } from 'react'
+
 import { fetchAPI } from 'src/lib/api'
 import { getStrapiMedia } from 'src/lib/media'
-
 import '../styles/globals.css'
 
 // Store Strapi Global object in context

@@ -1,32 +1,39 @@
-import React from "react"
-import Articles from "../components/articles"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import { fetchAPI } from "../lib/api"
+import { fetchAPI } from 'src/lib/api'
 
-const Home = ({ articles, categories, homepage }) => {
+const Home = ({ articles = [], categories = [], homepage = {} }) => {
   return (
-    <Layout categories={categories}>
-      <Seo seo={homepage.attributes.seo} />
-      <div className="uk-section">
-        <div className="uk-container uk-container-large">
-          <h1>{homepage.attributes.hero.title}</h1>
-          <Articles articles={articles} />
-        </div>
+    <div className='flex min-h-screen flex-col items-center justify-center md:py-2 py-12'>
+      <div className='flex w-11/12 flex-1 flex-col container justify-center'>
+        <h1 className='text-6xl'>Static Website Template</h1>
+        <p className='mt-3 text-2xl'>
+          This template provides a starting point for a static content website.
+        </p>
+        <br />
+        <b>Comes with:</b>
+        <ul className='list-disc pl-6'>
+          <li>Customizable Homepage</li>
+          <li>Customizable People/Team page powered by Strapi</li>
+          <li>Ready-to-go Navbar powered by Strapi</li>
+          <li>Ready-to-go Footer powered by Strapi</li>
+          <li>Ready-to-go Announcements powered by Strapi</li>
+          <li>Ready-to-go Contact form</li>
+          <li>Preconfigured TailwindCSS for styling</li>
+          <li>Preconfigured Strapi backend for providing evolving content</li>
+          <li>No branding or design</li>
+        </ul>
       </div>
-    </Layout>
+    </div>
   )
 }
 
 export async function getStaticProps() {
-  // Run API calls in parallel
   const [articlesRes, categoriesRes, homepageRes] = await Promise.all([
-    fetchAPI("/articles", { populate: "*" }),
-    fetchAPI("/categories", { populate: "*" }),
-    fetchAPI("/homepage", {
+    fetchAPI('/articles', { populate: '*' }),
+    fetchAPI('/categories', { populate: '*' }),
+    fetchAPI('/homepage', {
       populate: {
-        hero: "*",
-        seo: { populate: "*" },
+        hero: '*',
+        seo: { populate: '*' },
       },
     }),
   ])
