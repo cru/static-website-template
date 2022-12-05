@@ -1,20 +1,20 @@
-const People = {
-  slug: "people",
+const Partners = {
+  slug: "partners",
   admin: {
-    defaultColumns: ["firstName", "lastName", "portrait", "status"],
-    useAsTitle: "firstName",
+    defaultColumns: ["name", "link", "logo", "status"],
+    useAsTitle: "name",
   },
   access: {
     read: () => true,
   },
   fields: [
     {
-      name: "firstName",
+      name: "name",
       type: "text",
       required: true,
     },
     {
-      name: "lastName",
+      name: "link",
       type: "text",
       required: true,
     },
@@ -24,7 +24,7 @@ const People = {
       required: false,
     },
     {
-      name: "portrait",
+      name: "logo",
       type: "relationship",
       relationTo: "media",
       required: true,
@@ -51,4 +51,4 @@ const People = {
   timestamps: true,
 };
 
-export default People;
+export default Partners;
