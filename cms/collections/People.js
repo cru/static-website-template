@@ -1,29 +1,33 @@
-const Posts = {
-  slug: "posts",
+const People = {
+  slug: "people",
   admin: {
-    defaultColumns: ["title", "author", "category", "tags", "status"],
-    useAsTitle: "title",
+    defaultColumns: ["firstName", "lastName", "status"],
+    useAsTitle: "firstName",
   },
   access: {
     read: () => true,
   },
   fields: [
     {
-      name: "title",
+      name: "firstName",
       type: "text",
+      required: true,
     },
     {
-      name: "author",
+      name: "lastName",
+      type: "text",
+      required: true,
+    },
+    {
+      name: "description",
+      type: "text",
+      required: false,
+    },
+    {
+      name: "portrait",
       type: "relationship",
-      relationTo: "users",
-    },
-    {
-      name: "publishedDate",
-      type: "date",
-    },
-    {
-      name: "content",
-      type: "richText",
+      relationTo: "media",
+      required: true,
     },
     {
       name: "status",
@@ -44,6 +48,7 @@ const Posts = {
       },
     },
   ],
+  timestamps: true,
 };
 
-export default Posts;
+export default People;

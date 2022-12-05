@@ -1,6 +1,7 @@
 import { buildConfig } from "payload/config";
 import Announcements from "./collections/Announcements";
-import Posts from "./collections/Posts";
+import Media from "./collections/Media";
+import People from "./collections/People";
 import Users from "./collections/Users";
 
 export default buildConfig({
@@ -8,5 +9,5 @@ export default buildConfig({
   admin: {
     user: Users.slug,
   },
-  collections: [Announcements, Posts, Users],
+  collections: [Users, Announcements, People, Media],
 });
