@@ -1,7 +1,7 @@
 const Announcements = {
   slug: "announcements",
   admin: {
-    defaultColumns: ["title", "author", "status"],
+    defaultColumns: ["title", "author", "slug", "status"],
     useAsTitle: "title",
   },
   access: {
@@ -36,6 +36,19 @@ const Announcements = {
     {
       name: "publishedDate",
       type: "date",
+    },
+    {
+      name: "slug",
+      type: "text",
+      required: true,
+      hooks: {
+        beforeValidate: [
+          (args) => {
+            console.log(args.value);
+            return args.value?.toLowerCase().replaceAll(" ", "-");
+          },
+        ],
+      },
     },
     {
       name: "status",
