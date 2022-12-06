@@ -1,15 +1,5 @@
 import api from 'src/lib/api'
 
-const Announcement = ({ announcement }) => {
-  return (
-    <>
-      <div>
-        <h1>{announcement.title}</h1>
-      </div>
-    </>
-  )
-}
-
 export async function getStaticPaths() {
   const res = await api.get('/announcements')
 
@@ -37,6 +27,16 @@ export async function getStaticProps({ params }) {
     props: { announcement: res.docs[0] },
     revalidate: 1,
   }
+}
+
+const Announcement = ({ announcement = {} }) => {
+  return (
+    <>
+      <div>
+        <h1>{announcement.title}</h1>
+      </div>
+    </>
+  )
 }
 
 export default Announcement
