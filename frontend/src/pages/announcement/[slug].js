@@ -1,38 +1,22 @@
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
-
-import { fetchAPI } from '../../lib/api'
-import Seo from '../../components/seo'
-import rehypeRaw from 'rehype-raw'
+import api from 'src/lib/api'
 
 const Announcement = ({ announcement }) => {
-  const seo = {
-    metaTitle: announcement.attributes.short_heading,
-    metaDescription: announcement.attributes.short_heading,
-  }
-
   return (
     <>
-      <Seo seo={seo} />
       <div>
-        <h1>{announcement.attributes.heading}</h1>
-        <ReactMarkdown
-          children={announcement.attributes.content}
-          remarkPlugins={[remarkGfm]}
-          rehypePlugins={[rehypeRaw]}
-        />
+        <h1>{announcement.title}</h1>
       </div>
     </>
   )
 }
 
 export async function getStaticPaths() {
-  const res = await fetchAPI('/announcements', { fields: ['slug'] })
+  const res = await api.get('/announcements')
 
   return {
-    paths: res.data.map((item) => ({
+    paths: res.docs.map((item) => ({
       params: {
-        slug: item.attributes.slug,
+        slug: item.slug,
       },
     })),
     fallback: false,
@@ -40,15 +24,17 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const res = await fetchAPI('/announcements', {
-    filters: {
-      slug: params.slug,
+  const res = await api.get('/announcements', {
+    where: {
+      slug: {
+        equals: params.slug,
+      },
     },
-    populate: '*',
+    limit: 1,
   })
 
   return {
-    props: { announcement: res.data[0] },
+    props: { announcement: res.docs[0] },
     revalidate: 1,
   }
 }

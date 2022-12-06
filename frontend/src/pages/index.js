@@ -1,6 +1,6 @@
-import { fetchAPI } from 'src/lib/api'
+import api from 'src/lib/api'
 
-const Home = ({ articles = [], announcements = [], homepage = {} }) => {
+const Home = ({ announcements = [], homepage = {} }) => {
   return (
     <div className='flex min-h-screen flex-col items-center justify-center md:py-2 py-12'>
       <div className='flex w-11/12 flex-1 flex-col container justify-center'>
@@ -27,22 +27,11 @@ const Home = ({ articles = [], announcements = [], homepage = {} }) => {
 }
 
 export async function getStaticProps() {
-  const responses = await Promise.all([
-    fetchAPI('/articles', { populate: '*' }),
-    fetchAPI('/announcements', { populate: '*' }),
-    fetchAPI('/homepage', {
-      populate: {
-        hero: '*',
-        seo: { populate: '*' },
-      },
-    }),
-  ])
+  const res = await api.get('/announcements')
 
   return {
     props: {
-      articles: responses[0].data,
-      announcements: responses[1].data,
-      homepage: responses[2].data,
+      announcements: res.docs,
     },
     revalidate: 1,
   }

@@ -41,10 +41,11 @@ const Announcements = {
       name: "slug",
       type: "text",
       required: true,
+      unique: true,
+      index: true,
       hooks: {
         beforeValidate: [
           (args) => {
-            console.log(args.value);
             return args.value?.toLowerCase().replaceAll(" ", "-");
           },
         ],
