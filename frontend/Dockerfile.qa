@@ -31,12 +31,12 @@ COPY --from=build /app/public ./public
 
 
 ENV NODE_ENV production
-ENV PORT 3000
+ENV PORT 3770
 ENV NEXT_TELEMETRY_DISABLED 1
 
 ENV NEXT_ENV qa
 ENV NEXTAUTH_URL <qa url>
 
-EXPOSE 3000
+EXPOSE 3770
 
 CMD ["node", "server.js"]

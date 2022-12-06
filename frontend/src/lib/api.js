@@ -1,46 +1,27 @@
-import qs from "qs"
+import qs from 'qs'
 
-/**
- * Get full Strapi URL from path
- * @param {string} path Path of the URL
- * @returns {string} Full Strapi URL
- */
-export function getStrapiURL(path = "") {
-  return `${
-    process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://localhost:1337"
-  }${path}`
-}
+const api = {}
+const url = `${process.env.NEXT_PUBLIC_CMS_API_URL || 'http://localhost:3000/api'}`
 
-/**
- * Helper to make GET requests to Strapi API endpoints
- * @param {string} path Path of the API route
- * @param {Object} urlParamsObject URL params object, will be stringified
- * @param {Object} options Options passed to fetch
- * @returns Parsed API call response
- */
-export async function fetchAPI(path, urlParamsObject = {}, options = {}) {
-  // Merge default and user options
-  const mergedOptions = {
+api.get = async (path = '', params = {}, options = {}) => {
+  const config = {
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     ...options,
   }
+  const query = qs.stringify(params)
+  const requestURL = `${url}${path}?${query}`
 
-  // Build request URL
-  const queryString = qs.stringify(urlParamsObject)
-  const requestUrl = `${getStrapiURL(
-    `/api${path}${queryString ? `?${queryString}` : ""}`
-  )}`
+  try {
+    const response = await fetch(requestURL, config)
+    const data = await response.json()
 
-  // Trigger API call
-  const response = await fetch(requestUrl, mergedOptions)
-
-  // Handle response
-  if (!response.ok) {
+    return data
+  } catch (error) {
     console.error(response.statusText)
     throw new Error(`An error occured please try again`)
   }
-  const data = await response.json()
-  return data
 }
+
+export default api

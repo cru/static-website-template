@@ -6,11 +6,14 @@
     "autoprefixer": "^10.4.13",
     "dayjs": "^1.11.6",
     "next": "^13.0.5",
+    "plaiceholder": "^2.5.0",
     "postcss": "^8.4.19",
     "qs": "^6.11.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-markdown": "^8.0.3",
+    "rehype-raw": "^6.1.1",
+    "remark-gfm": "^3.0.1",
     "sharp": "^0.31.2",
     "tailwindcss": "^3.2.4"
   },
@@ -24,7 +27,7 @@
   "scripts": {
     "pretty": "prettier --write \"./**/*.{js,jsx,json}\"",
     "lint": "next lint",
-    "start": "next dev",
+    "start": "next dev -p 3770",
     "build": "next build",
     "serve": "next start"
   }
