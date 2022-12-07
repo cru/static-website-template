@@ -9,7 +9,7 @@ export async function getStaticPaths() {
         slug: item.slug,
       },
     })),
-    fallback: false,
+    fallback: 'blocking',
   }
 }
 
@@ -25,7 +25,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: { announcement: res.docs[0] },
-    revalidate: 1,
+    revalidate: 21600, // 6 hours
   }
 }
 
