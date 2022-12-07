@@ -1,14 +1,14 @@
 import Layout from 'src/components/layout'
 import api from 'src/lib/api'
 
-export async function getStaticProps() {
+export const getStaticProps = async () => {
   const res = await api.get('/announcements')
 
   return {
     props: {
-      announcements: res.docs,
+      announcements: res.docs || [],
     },
-    revalidate: 1,
+    revalidate: 21600, // 6 hours
   }
 }
 

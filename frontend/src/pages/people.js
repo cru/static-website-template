@@ -4,11 +4,11 @@ import Layout from 'src/components/layout'
 
 import api from 'src/lib/api'
 
-export async function getStaticProps() {
+export const getStaticProps = async () => {
   const res = await api.get('/people')
   const people = []
 
-  for (let i = 0; i < res.docs.length; i++) {
+  for (let i = 0; i < res.docs?.length; i++) {
     const portrait = res.docs[i].portrait
 
     if (portrait) {
@@ -30,7 +30,7 @@ export async function getStaticProps() {
 
   return {
     props: { people: people },
-    revalidate: 1,
+    revalidate: 21600, // 6 hours
   }
 }
 

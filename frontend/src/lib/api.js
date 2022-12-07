@@ -19,8 +19,9 @@ api.get = async (path = '', params = {}, options = {}) => {
 
     return data
   } catch (error) {
-    console.error(response.statusText)
-    throw new Error(`An error occured please try again`)
+    console.error(error)
+
+    return error
   }
 }
 
