@@ -19,4 +19,31 @@
     @apply text-lg;
     @apply md:text-xl;
   }
+
+  p {
+    @apply mt-2;
+    @apply mb-2;
+  }
+
+  a {
+    @apply underline;
+    @apply underline-offset-1;
+    @apply font-bold;
+    @apply decoration-2;
+    @apply decoration-sky-500;
+  }
+
+  ul {
+    @apply list-disc;
+    @apply list-outside;
+  }
+
+  ol {
+    @apply list-decimal;
+    @apply list-outside;
+  }
+}
+
+html {
+  font-size: 18px;
 }

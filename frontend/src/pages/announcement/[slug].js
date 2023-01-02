@@ -1,4 +1,7 @@
+import { Fragment } from 'react'
+import Layout from 'src/components/layout'
 import api from 'src/lib/api'
+import utils from 'src/lib/cms-utils'
 
 export const getStaticPaths = async () => {
   const res = await api.get('/announcements')
@@ -34,12 +37,15 @@ export const getStaticProps = async ({ params }) => {
 }
 
 const Announcement = ({ announcement = {} }) => {
+  console.log(announcement)
   return (
-    <>
-      <div>
+    <Layout>
+      <div className='mb-8'>
         <h1>{announcement.title}</h1>
+        <h4>{announcement.description}</h4>
       </div>
-    </>
+      <Fragment>{utils.serialize(announcement.content)}</Fragment>
+    </Layout>
   )
 }
 
