@@ -5,10 +5,10 @@
   "main": "server.js",
   "license": "MIT",
   "scripts": {
-    "pretty": "prettier --write \"./**/*.{js,jsx,json}\"",
+    "pretty": "prettier --write \"./**/*.{js,ts,jsx,json}\"",
     "start": "nodemon",
     "build": "payload build",
-    "serve": "NODE_ENV=production node server.js"
+    "serve": "NODE_ENV=production node dist/server.js"
   },
   "dependencies": {
     "dotenv": "^16.0.3",

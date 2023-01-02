@@ -44,7 +44,7 @@ const Announcement = ({ announcement = {} }) => {
         <h1>{announcement.title}</h1>
         <h4>{announcement.description}</h4>
       </div>
-      <Fragment>{utils.serialize(announcement.content)}</Fragment>
+      <Fragment>{utils.serializeRichText(announcement.content)}</Fragment>
     </Layout>
   )
 }
