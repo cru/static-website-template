@@ -40,7 +40,7 @@ const People = ({ people = [] }) => {
       <h1>People</h1>
       <div className='grid grid-cols-4 gap-8'>
         {people.map((item) => (
-          <div className='h-64'>
+          <div className='h-64' key={item.id}>
             <div className='relative h-5/6'>
               <Image
                 {...item.imageProps}
