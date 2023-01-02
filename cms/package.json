@@ -5,6 +5,7 @@
   "main": "server.js",
   "license": "MIT",
   "scripts": {
+    "pretty": "prettier --write \"./**/*.{js,jsx,json}\"",
     "start": "nodemon",
     "build": "payload build",
     "serve": "NODE_ENV=production node server.js"
@@ -15,6 +16,7 @@
     "payload": "^1.4.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.6",
+    "prettier": "^2.8.1"
   }
 }

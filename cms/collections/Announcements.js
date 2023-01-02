@@ -1,76 +1,77 @@
 const Announcements = {
-  slug: "announcements",
+  slug: 'announcements',
   admin: {
-    defaultColumns: ["title", "author", "slug", "status"],
-    useAsTitle: "title",
+    defaultColumns: ['title', 'author', 'slug', 'status'],
+    useAsTitle: 'title',
+    group: 'Content',
   },
   access: {
     read: () => true,
   },
   fields: [
     {
-      name: "title",
-      type: "text",
+      name: 'title',
+      type: 'text',
       required: true,
     },
     {
-      name: "shortHeader",
-      type: "text",
+      name: 'shortHeader',
+      type: 'text',
       required: true,
     },
     {
-      name: "description",
-      type: "text",
+      name: 'description',
+      type: 'text',
       required: false,
     },
     {
-      name: "content",
-      type: "richText",
+      name: 'content',
+      type: 'richText',
       required: true,
     },
     {
-      name: "author",
-      type: "relationship",
-      relationTo: "users",
+      name: 'author',
+      type: 'relationship',
+      relationTo: 'users',
     },
     {
-      name: "publishedDate",
-      type: "date",
+      name: 'publishedDate',
+      type: 'date',
     },
     {
-      name: "slug",
-      type: "text",
+      name: 'slug',
+      type: 'text',
       required: true,
       unique: true,
       index: true,
       hooks: {
         beforeValidate: [
           (args) => {
-            return args.value?.toLowerCase().replaceAll(" ", "-");
+            return args.value?.toLowerCase().replaceAll(' ', '-')
           },
         ],
       },
     },
     {
-      name: "status",
-      type: "select",
+      name: 'status',
+      type: 'select',
       options: [
         {
-          value: "draft",
-          label: "Draft",
+          value: 'draft',
+          label: 'Draft',
         },
         {
-          value: "published",
-          label: "Published",
+          value: 'published',
+          label: 'Published',
         },
       ],
-      defaultValue: "draft",
+      defaultValue: 'draft',
       admin: {
-        position: "sidebar",
+        position: 'sidebar',
       },
     },
   ],
   timestamps: true,
-};
+}
 
-export default Announcements;
+export default Announcements

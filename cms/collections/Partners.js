@@ -1,54 +1,55 @@
 const Partners = {
-  slug: "partners",
+  slug: 'partners',
   admin: {
-    defaultColumns: ["name", "link", "logo", "status"],
-    useAsTitle: "name",
+    defaultColumns: ['name', 'link', 'logo', 'status'],
+    useAsTitle: 'name',
+    group: 'Content',
   },
   access: {
     read: () => true,
   },
   fields: [
     {
-      name: "name",
-      type: "text",
+      name: 'name',
+      type: 'text',
       required: true,
     },
     {
-      name: "link",
-      type: "text",
+      name: 'link',
+      type: 'text',
       required: true,
     },
     {
-      name: "description",
-      type: "text",
+      name: 'description',
+      type: 'text',
       required: false,
     },
     {
-      name: "logo",
-      type: "relationship",
-      relationTo: "media",
+      name: 'logo',
+      type: 'relationship',
+      relationTo: 'media',
       required: true,
     },
     {
-      name: "status",
-      type: "select",
+      name: 'status',
+      type: 'select',
       options: [
         {
-          value: "draft",
-          label: "Draft",
+          value: 'draft',
+          label: 'Draft',
         },
         {
-          value: "published",
-          label: "Published",
+          value: 'published',
+          label: 'Published',
         },
       ],
-      defaultValue: "draft",
+      defaultValue: 'draft',
       admin: {
-        position: "sidebar",
+        position: 'sidebar',
       },
     },
   ],
   timestamps: true,
-};
+}
 
-export default Partners;
+export default Partners

@@ -1,54 +1,55 @@
 const People = {
-  slug: "people",
+  slug: 'people',
   admin: {
-    defaultColumns: ["firstName", "lastName", "portrait", "status"],
-    useAsTitle: "firstName",
+    defaultColumns: ['firstName', 'lastName', 'portrait', 'status'],
+    useAsTitle: 'firstName',
+    group: 'Content',
   },
   access: {
     read: () => true,
   },
   fields: [
     {
-      name: "firstName",
-      type: "text",
+      name: 'firstName',
+      type: 'text',
       required: true,
     },
     {
-      name: "lastName",
-      type: "text",
+      name: 'lastName',
+      type: 'text',
       required: true,
     },
     {
-      name: "description",
-      type: "text",
+      name: 'description',
+      type: 'text',
       required: false,
     },
     {
-      name: "portrait",
-      type: "relationship",
-      relationTo: "media",
+      name: 'portrait',
+      type: 'relationship',
+      relationTo: 'media',
       required: true,
     },
     {
-      name: "status",
-      type: "select",
+      name: 'status',
+      type: 'select',
       options: [
         {
-          value: "draft",
-          label: "Draft",
+          value: 'draft',
+          label: 'Draft',
         },
         {
-          value: "published",
-          label: "Published",
+          value: 'published',
+          label: 'Published',
         },
       ],
-      defaultValue: "draft",
+      defaultValue: 'draft',
       admin: {
-        position: "sidebar",
+        position: 'sidebar',
       },
     },
   ],
   timestamps: true,
-};
+}
 
-export default People;
+export default People

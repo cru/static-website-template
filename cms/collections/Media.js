@@ -1,7 +1,8 @@
 const Media = {
-  slug: "media",
+  slug: 'media',
   admin: {
-    useAsTitle: "name",
+    useAsTitle: 'name',
+    group: 'Content',
   },
   access: {
     read: () => true,
@@ -9,10 +10,10 @@ const Media = {
   upload: true,
   fields: [
     {
-      name: "name",
-      type: "text",
+      name: 'name',
+      type: 'text',
     },
   ],
-};
+}
 
-export default Media;
+export default Media

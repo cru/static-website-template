@@ -3,6 +3,7 @@ const Users = {
   auth: true,
   admin: {
     useAsTitle: 'email',
+    group: 'Admin',
   },
   access: {
     read: () => true,
@@ -12,8 +13,8 @@ const Users = {
     {
       name: 'name',
       type: 'text',
-    }
+    },
   ],
-};
+}
 
-export default Users;
+export default Users
