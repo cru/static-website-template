@@ -42,6 +42,15 @@
     @apply list-decimal;
     @apply list-outside;
   }
+
+  hr {
+    @apply mt-2;
+    @apply mb-2;
+    @apply border-b-0;
+    @apply border-t-4;
+    @apply border-solid;
+    @apply w-1/3;
+  }
 }
 
 html {

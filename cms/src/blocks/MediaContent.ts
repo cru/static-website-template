@@ -1,5 +1,4 @@
 import { Block } from 'payload/types';
-import linkGroup from '../fields/linkGroup';
 import richText from '../fields/richText';
 import embeddedVideo from '../fields/embeddedVideo';
 
@@ -32,13 +31,7 @@ export const MediaContent: Block = {
     },
     richText(
       {},
-      {
-        elements: [
-          'ol',
-          'ul',
-          'indent',
-        ],
-      },
+      {},
     ),
     {
       name: 'media',
@@ -52,11 +45,6 @@ export const MediaContent: Block = {
       },
     },
     embeddedVideo,
-    linkGroup({
-      overrides: {
-        maxRows: 1,
-      },
-    }),
   ],
 };
 

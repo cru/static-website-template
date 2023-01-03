@@ -1,7 +1,5 @@
 import { RichTextField } from 'payload/dist/fields/config/types';
 import { Field } from 'payload/types';
-import link from './link';
-import linkGroup from './linkGroup';
 import richText from './richText';
 import largeBody from './richText/largeBody';
 import embeddedVideo from './embeddedVideo';
@@ -92,7 +90,6 @@ export const hero: Field = {
       },
       fields: [
         richTextHeroField(),
-        linkGroup(),
       ],
     },
     {
@@ -104,7 +101,6 @@ export const hero: Field = {
       },
       fields: [
         richTextHeroField(),
-        linkGroup(),
       ],
     },
     {
@@ -116,7 +112,6 @@ export const hero: Field = {
       },
       fields: [
         richTextHeroField(),
-        linkGroup(),
         {
           name: 'media',
           type: 'upload',
@@ -141,7 +136,6 @@ export const hero: Field = {
         richTextHeroField({
           name: 'mainContent',
         }),
-        linkGroup(),
         richText({ name: 'sidebarContent' }),
       ],
     },
@@ -163,7 +157,6 @@ export const hero: Field = {
           },
         },
         richTextHeroField(),
-        linkGroup(),
       ],
     },
     {
@@ -184,7 +177,6 @@ export const hero: Field = {
           },
         },
         richTextHeroField(),
-        linkGroup(),
         {
           name: 'columns',
           label: 'Columns',
@@ -207,10 +199,6 @@ export const hero: Field = {
               required: true,
               maxLength: 220,
             },
-            link({
-              appearances: false,
-              disableLabel: true,
-            }),
           ],
         },
       ],
@@ -233,13 +221,6 @@ export const hero: Field = {
         },
         richTextHeroField({
           condition: (_, { useStaticContent }) => Boolean(useStaticContent),
-        }),
-        linkGroup({
-          overrides: {
-            admin: {
-              condition: (data, { useStaticContent }) => Boolean(useStaticContent),
-            },
-          },
         }),
         {
           name: 'slides',
@@ -264,17 +245,6 @@ export const hero: Field = {
                 const dataRef = data as any;
                 const useStaticContent = dataRef?.hero?.fullscreenSlider?.useStaticContent;
                 return Boolean(!useStaticContent);
-              },
-            }),
-            linkGroup({
-              overrides: {
-                admin: {
-                  condition: (data) => {
-                    const dataRef = data as any;
-                    const useStaticContent = dataRef?.hero?.fullscreenSlider?.useStaticContent;
-                    return Boolean(!useStaticContent);
-                  },
-                },
               },
             }),
           ],

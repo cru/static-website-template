@@ -34,26 +34,33 @@ utils.serializeRichText = (children = []) =>
         return <h5 key={i}>{utils.serializeRichText(node.children)}</h5>
       case 'h6':
         return <h6 key={i}>{utils.serializeRichText(node.children)}</h6>
-      // case 'p':
-      //   return <p key={i}>{utils.serializeRichText(node.children)}</p>
-      case 'quote':
-        return <blockquote key={i}>{utils.serializeRichText(node.children)}</blockquote>
-      case 'ul':
-        return <ul key={i}>{utils.serializeRichText(node.children)}</ul>
-      case 'ol':
-        return <ol key={i}>{utils.serializeRichText(node.children)}</ol>
-      case 'li':
-        return <li key={i}>{utils.serializeRichText(node.children)}</li>
       case 'link':
         return node.newTab ? (
           <a href={escapeHTML(node.url)} key={i} target='_blank' rel='noopener'>
             {utils.serializeRichText(node.children)}
           </a>
         ) : (
-          <a href={escapeHTML(node.url)} key={i} className='decoration-2'>
+          <a href={escapeHTML(node.url)} key={i}>
             {utils.serializeRichText(node.children)}
           </a>
         )
+      case 'ul':
+        return <ul key={i}>{utils.serializeRichText(node.children)}</ul>
+      case 'ol':
+        return <ol key={i}>{utils.serializeRichText(node.children)}</ol>
+      case 'li':
+        return <li key={i}>{utils.serializeRichText(node.children)}</li>
+      case 'hr':
+        return <hr key={i} />
+      case 'large-body':
+        return (
+          <span key={i} className='text-lg'>
+            {utils.serializeRichText(node.children)}
+          </span>
+        )
+
+      // case 'p':
+      //   return <p key={i}>{utils.serializeRichText(node.children)}</p>
       default:
         return <span key={i}>{utils.serializeRichText(node.children)}</span>
     }

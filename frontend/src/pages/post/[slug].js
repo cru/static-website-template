@@ -30,7 +30,7 @@ export const getStaticProps = async ({ params }) => {
   if (res.docs) {
     return {
       props: { post: res.docs[0] },
-      revalidate: 21600, // 6 hours
+      revalidate: parseInt(process.env.NEXT_PUBLIC_REGENERATION_TIME),
     }
   } else return { notFound: true }
 }
