@@ -74,4 +74,17 @@ utils.getColSpan = (width = '') => {
   }
 }
 
+utils.getAlignment = (alignment = '') => {
+  switch (alignment) {
+    case 'center':
+      return 'text-center'
+    case 'left':
+      return 'text-left'
+    case 'right':
+      return 'text-right'
+    default:
+      return 'text-left'
+  }
+}
+
 export default utils

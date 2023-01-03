@@ -48,7 +48,11 @@ const Post = ({ post = {} }) => {
               <div className='grid grid-cols-6 gap-4'>
                 {block.columns.map((col) => {
                   return (
-                    <div className={`col-span-${col.width} text-${col.alignment}`}>
+                    <div
+                      className={`${utils.getColSpan(col.width)} ${utils.getAlignment(
+                        col.alignment
+                      )}`}
+                    >
                       {utils.serializeRichText(col.richText)}
                     </div>
                   )

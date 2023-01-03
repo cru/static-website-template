@@ -65,19 +65,18 @@ export const Accordion: Block = {
                   type: 'select',
                   defaultValue: 'full',
                   required: true,
-                  //values are based on a 6-column grid
                   options: [
                     {
                       label: 'One Third',
-                      value: '2',
+                      value: 'oneThird',
                     },
                     {
                       label: 'Half',
-                      value: '3',
+                      value: 'half',
                     },
                     {
                       label: 'Two Thirds',
-                      value: '4',
+                      value: 'twoThirds',
                     },
                     {
                       label: 'Full Width',
