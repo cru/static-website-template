@@ -1,7 +1,9 @@
 import { useRef } from 'react'
-import { About } from 'src/components/About'
-import { Banner } from 'src/components/Banner'
 
+import About from 'src/components/About'
+import Banner from 'src/components/Banner'
+import Footer from 'src/components/Footer'
+import Mission from 'src/components/Mission'
 import constants from 'src/constants'
 import api from 'src/lib/api'
 
@@ -58,11 +60,11 @@ const Home = () => {
       {/* <Header scrollTo={scrollTo} /> */}
       <Banner />
       <About scrollRef={aboutRef} />
-      {/* <Mission missionRef={missionRef} />
-      <Contact contactRef={contactRef} />
-      <Team teamRef={teamRef} />
-      <Partners partnersRef={partnersRef} />
-      <Donate donateRef={donateRef} /> */}
+      <Mission scrollRef={missionRef} />
+      {/* <Contact contactRef={contactRef} /> */}
+      {/* <Team teamRef={teamRef} /> */}
+      {/* <Partners partnersRef={partnersRef} /> */}
+      {/* <Donate donateRef={donateRef} /> */}
       {/* <div className='section-light-thin'>
               <Row  align='middle' justify='center' gutter={32}>
                 <Col xl={24} lg={24} md={24} sm={24} xs={24}>
@@ -90,7 +92,7 @@ const Home = () => {
                 </Col>
               </Row>
             </div> */}
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }

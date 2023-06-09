@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const About = ({ scrollRef }) => {
+const About = ({ scrollRef }) => {
   return (
     <div ref={scrollRef} className='container layout text-center'>
       <h1>About Us</h1>
@@ -24,3 +24,5 @@ export const About = ({ scrollRef }) => {
     </div>
   )
 }
+
+export default About

@@ -1,33 +1,25 @@
-import React from 'react'
-import { Col, Row } from 'antd/lib/grid'
+import Image from 'next/image'
 
-export const Footer = () => {
+import cruLogo from 'public/images/cru-logo.png'
+
+const Footer = () => {
   return (
-    <div className='footer text-center'>
-      <div style={{ marginTop: '2rem' }}>
-        <Row justify='center' align='middle' gutter={16}>
-          <Col xl={3}>
-            <picture>
-              <source srcSet={'/images/partners/asf-logo.webp'} type='image/webp' />
-              <img
-                src='/images/partners/asf-logo.png'
-                className='logo-img-small'
-                alt='asf'
-              />
-            </picture>
-          </Col>
-          <Col xl={3}>
-            <picture>
-              <source srcSet={'/images/partners/cru-logo.webp'} type='image/webp' />
-              <img
-                src='/images/partners/cru-logo.png'
-                className='logo-img-small'
-                alt='cru'
-              />
-            </picture>
-          </Col>
-        </Row>
-      </div>
-    </div>
+    <footer className='flex flex-col h-24 w-full items-center justify-center border-t gap-1'>
+      <a
+        className='flex items-center justify-center gap-1'
+        href='https://cru.ucalgary.ca'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        Built by
+        <Image src={cruLogo} alt='CRU Logo' width={75} height={24} placeholder='blur' />
+      </a>
+      <small>
+        Interest in your own custom website? Contact us at{' '}
+        <a href='mailto:cru@ucalgary.ca'>cru@ucalgary.ca</a>
+      </small>
+    </footer>
   )
 }
+
+export default Footer

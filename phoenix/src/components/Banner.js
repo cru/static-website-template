@@ -3,10 +3,10 @@ import Image from 'next/image'
 import heroImg from 'public/images/hero.jpg'
 import logoImg from 'public/images/logo.png'
 
-export const Banner = () => {
+const Banner = () => {
   return (
-    <div className='w-full p-8 lg:h-[525px] lg:bg-gradient-to-r lg:from-indigo-400 lg:from-10% lg:via-purple-400 lg:via-55% lg:to-white lg:to-55% h-[800px] bg-gradient-to-t from-white from-30% via-blue-300 via-30% to-slate-400'>
-      <div className='grid gap-4 items-center container layout lg:grid-cols-2 lg:justify-items-start justify-items-center'>
+    <div className='w-full p-8 lg:h-content lg:min-h-[525px] lg:bg-gradient-to-r lg:from-indigo-400 lg:from-10% lg:via-purple-400 lg:via-55% lg:to-white lg:to-55% h-content h-min-[800px] bg-gradient-to-t from-white from-30% via-purple-400 via-30% to-indigo-400'>
+      <div className='grid gap-8 items-center container layout h-full lg:grid-cols-2 lg:justify-items-start justify-items-center'>
         <div className='p-8 space-y-6'>
           <div className='flex items-center gap-4'>
             <Image
@@ -39,3 +39,5 @@ export const Banner = () => {
     </div>
   )
 }
+
+export default Banner
