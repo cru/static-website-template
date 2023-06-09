@@ -19,7 +19,7 @@ const Contact = ({ scrollRef }) => {
 
   return (
     <div ref={scrollRef} className='container layout text-center'>
-      <ScrollTrigger onEnter={() => setTimeout(() => setVisible(true), 300)}>
+      <ScrollTrigger onEnter={() => setVisible(true)} onExit={() => setVisible(false)}>
         <h1 className='mb-6'>Contact Us</h1>
         <div className='grid lg:grid-cols-3 gap-16'>
           {transitions((style, item) => (
@@ -32,19 +32,19 @@ const Contact = ({ scrollRef }) => {
 }
 
 const contactItems = [
-  <div key='email' className='text-center space-y-2'>
+  <div className='text-center space-y-2'>
     <h4>Email</h4>
     <EnvelopeIcon className='h-12 w-12 m-auto text-indigo-400' />
     <a href='mailto:email@domain.ca' className='block'>
       email@domain.ca
     </a>
   </div>,
-  <div key='phone' className='text-center space-y-2'>
+  <div className='text-center space-y-2'>
     <h4>Phone/Fax</h4>
     <PhoneIcon className='h-12 w-12 m-auto text-indigo-400' />
     <span className='block'>Phone: 403-283-4449</span>
   </div>,
-  <div key='address' className='text-center space-y-2'>
+  <div className='text-center space-y-2'>
     <h4>Address</h4>
     <MapPinIcon className='h-12 w-12 m-auto text-indigo-400' />
     <span>123 Willow Street Havenbrook, Anytown 56789 Dreamland</span>

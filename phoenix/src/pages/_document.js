@@ -1,7 +1,7 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 
 const Document = () => {
-  const googleFont = 'Bagel+Fat+One'
+  const googleFont = 'Roboto Mono'
 
   return (
     <Html lang='en'>
@@ -9,7 +9,10 @@ const Document = () => {
         <link rel='icon' href='/favicon.ico' />
         {googleFont && (
           <link
-            href={`https://fonts.googleapis.com/css2?family=${googleFont}&display=swap`}
+            href={`https://fonts.googleapis.com/css2?family=${googleFont?.replace(
+              ' ',
+              '+'
+            )}&display=swap`}
             rel='stylesheet'
           />
         )}

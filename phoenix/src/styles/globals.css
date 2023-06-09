@@ -7,10 +7,10 @@
     @apply font-header xl:text-5xl text-4xl;
   }
   h2 {
-    @apply xl:text-4xl text-2xl;
+    @apply font-header xl:text-4xl text-2xl;
   }
   h3 {
-    @apply xl:text-2xl text-xl;
+    @apply font-header xl:text-2xl text-xl;
   }
   h4 {
     @apply xl:text-xl text-lg;

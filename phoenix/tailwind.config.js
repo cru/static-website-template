@@ -9,7 +9,7 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      header: ['"Bagel Fat One"'],
+      header: ['"Roboto Mono"'],
     },
   },
 }

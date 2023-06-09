@@ -1,10 +1,10 @@
 import { useRef } from 'react'
 
-import About from 'src/components/About'
 import Banner from 'src/components/Banner'
 import Contact from 'src/components/Contact'
 import Footer from 'src/components/Footer'
 import Mission from 'src/components/Mission'
+import Services from 'src/components/Services'
 import constants from 'src/constants'
 import api from 'src/lib/api'
 
@@ -60,7 +60,7 @@ const Home = () => {
     <div className='space-y-16'>
       {/* <Header scrollTo={scrollTo} /> */}
       <Banner />
-      <About scrollRef={aboutRef} />
+      <Services scrollRef={aboutRef} />
       <Mission scrollRef={missionRef} />
       <Contact scrollRef={contactRef} />
       {/* <Team teamRef={teamRef} /> */}
