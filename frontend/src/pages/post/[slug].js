@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Layout from 'src/components/layout'
 import api from 'src/lib/api'
 import utils from 'src/lib/cms-utils'
@@ -45,19 +46,34 @@ const Post = ({ post = {} }) => {
           return (
             <>
               <h3>{block.blockName}</h3>
-              <div className='grid grid-cols-6 gap-4'>
-                {block.columns.map((col) => {
-                  return (
-                    <div
-                      className={`${utils.getColSpan(col.width)} ${utils.getAlignment(
-                        col.alignment
-                      )}`}
-                    >
-                      {utils.serializeRichText(col.richText)}
-                    </div>
-                  )
-                })}
-              </div>
+              {block.blockType === 'content' && (
+                <div className='grid grid-cols-6 gap-4'>
+                  {block.columns.map((col, i) => {
+                    return (
+                      <div
+                        key={i}
+                        className={`${utils.getColSpan(col.width)} ${utils.getAlignment(
+                          col.alignment
+                        )}`}
+                      >
+                        {utils.serializeRichText(col.richText)}
+                      </div>
+                    )
+                  })}
+                </div>
+              )}
+              {block.blockType === 'media' && (
+                <div className='relative h-96'>
+                  <Image
+                    src={block.media.url}
+                    fill
+                    sizes='(max-width: 768px) 50vw,
+              (max-width: 1200px) 33vw,
+              25vw'
+                    className='object-contain'
+                  />
+                </div>
+              )}
             </>
           )
         })}

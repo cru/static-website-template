@@ -1,6 +1,5 @@
 import slug from '../fields/slug'
 import Content from '../blocks/Content'
-import { Media } from '../blocks/Media'
 import MediaContent from '../blocks/MediaContent'
 import MediaSlider from '../blocks/MediaSlider'
 
@@ -57,7 +56,7 @@ const Posts = {
       label: 'Page Layout',
       type: 'blocks',
       minRows: 1,
-      blocks: [Content, Media, MediaContent, MediaSlider],
+      blocks: [Content, MediaContent, MediaSlider],
     },
     slug(),
     {
