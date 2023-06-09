@@ -3,7 +3,7 @@ import React from 'react'
 const About = ({ scrollRef }) => {
   return (
     <div ref={scrollRef} className='container layout text-center'>
-      <h1>About Us</h1>
+      <h1 className='mb-6'>About Us</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse rhoncus ex
         quam, eget ultrices lacus cursus eu. In tempor odio ut accumsan auctor. Donec
