@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import { About } from 'src/components/About'
 import { Banner } from 'src/components/Banner'
 
 import constants from 'src/constants'
@@ -53,11 +54,11 @@ const Home = () => {
   }
 
   return (
-    <>
+    <div className='space-y-16'>
       {/* <Header scrollTo={scrollTo} /> */}
       <Banner />
-      {/* <About aboutRef={aboutRef} />
-      <Mission missionRef={missionRef} />
+      <About scrollRef={aboutRef} />
+      {/* <Mission missionRef={missionRef} />
       <Contact contactRef={contactRef} />
       <Team teamRef={teamRef} />
       <Partners partnersRef={partnersRef} />
@@ -90,7 +91,7 @@ const Home = () => {
               </Row>
             </div> */}
       {/* <Footer /> */}
-    </>
+    </div>
   )
 }
 
