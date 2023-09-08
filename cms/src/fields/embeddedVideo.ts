@@ -1,13 +1,13 @@
-import { Field } from 'payload/types';
-import aspectRatio from './aspectRatio';
+import { Field } from 'payload/types'
+import aspectRatio from './aspectRatio'
 
 const embeddedVideo: Field = {
   name: 'embeddedVideo',
   label: 'Embedded Video',
   type: 'group',
-	admin: {
-		hideGutter: true,
-	},
+  admin: {
+    hideGutter: true,
+  },
   fields: [
     {
       name: 'embed',
@@ -23,7 +23,8 @@ const embeddedVideo: Field = {
       relationTo: 'media',
       admin: {
         condition: (data, { embed }) => Boolean(embed),
-        description: 'Maximum upload file size: 12MB. Recommended file size for images is <500KB.',
+        description:
+          'Maximum upload file size: 12MB. Recommended file size for images is <500KB.',
       },
     },
     {
@@ -58,6 +59,6 @@ const embeddedVideo: Field = {
       },
     }),
   ],
-};
+}
 
-export default embeddedVideo;
+export default embeddedVideo
