@@ -2,6 +2,7 @@ import { useRef } from 'react'
 
 import Banner from 'src/components/Banner'
 import Contact from 'src/components/Contact'
+import Donate from 'src/components/Donate'
 import Footer from 'src/components/Footer'
 import Mission from 'src/components/Mission'
 import Services from 'src/components/Services'
@@ -64,8 +65,7 @@ const Home = () => {
       <Mission scrollRef={missionRef} />
       <Contact scrollRef={contactRef} />
       {/* <Team teamRef={teamRef} /> */}
-      {/* <Partners partnersRef={partnersRef} /> */}
-      {/* <Donate donateRef={donateRef} /> */}
+      <Donate donateRef={donateRef} />
       {/* <div className='section-light-thin'>
               <Row  align='middle' justify='center' gutter={32}>
                 <Col xl={24} lg={24} md={24} sm={24} xs={24}>

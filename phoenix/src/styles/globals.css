@@ -39,7 +39,11 @@
 
 @layer components {
   .layout {
-    @apply pl-4 pr-4 ml-auto mr-auto;
+    @apply px-4 mx-auto;
+  }
+
+  .section {
+    @apply my-32 min-h-[20vh] scroll-mt-8;
   }
 }
 

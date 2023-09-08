@@ -1,63 +1,38 @@
-import React from 'react'
-import { Col, Row } from 'antd/lib/grid'
-import Divider from 'antd/lib/divider'
-import Button from 'antd/lib/button'
-
-export const Donate = (props) => {
+const Donate = ({ forwardRef = null }) => {
   return (
-    <div ref={props.donateRef} className='section section-light-left'>
-      <Row align='middle' className='align-middle container'>
-        <Col xl={12} lg={12} md={24} className='section-light-left-content'>
-          <Row gutter={[32, 32]}>
-            <Col span={8} className='text-center'>
-              <h2>$20</h2>
-              <Divider />
-              {/* <span>
-                can help Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-                vestibulum mi id mi euismod, eu pulvinar.
-              </span> */}
-            </Col>
-            <Col span={8} className='text-center'>
-              <h2>$50</h2>
-              <Divider />
-              {/* <span>
-                can help Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                eu ipsum a.
-              </span> */}
-            </Col>
-            <Col span={8} className='text-center'>
-              <h2>$100</h2>
-              <Divider />
-              {/* <span>
-                can help Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                nisi magna, fermentum in leo id, sodales convallis nulla.
-              </span> */}
-            </Col>
-          </Row>
-          <h5>
-            Donations are used to support innovative research projects within the Province
-            of Alberta that aim to improve our understanding and management of spinal
-            disorders
-          </h5>
-          <Row style={{ marginTop: '4rem' }}>
-            <Col span={24} className='text-center'>
-              <Button
-                type='primary'
-                size='large'
-                shape='round'
-                href='https://www.canadahelps.org/en/charities/alberta-spine-foundation/'
-                target='_blank'
-                style={{ paddingTop: 0 }}
-              >
-                Donate Now
-              </Button>
-            </Col>
-          </Row>
-        </Col>
-        <Col xl={12} lg={12} md={24} className='hero-panel'>
-          <h1 className='align-middle text-center'>How Your Money Helps</h1>
-        </Col>
-      </Row>
+    <div
+      ref={forwardRef}
+      className='section w-full p-8 lg:h-content lg:h-min-[525px] lg:bg-gradient-to-r lg:from-gray-100 lg:from-55% lg:to-white lg:to-45% h-content h-min-[800px] bg-gradient-to-b from-gray-100 from-60% to-white to-40%'
+    >
+      <div className='grid gap-8 items-center container layout h-full lg:grid-cols-2 lg:justify-items-start justify-items-center'>
+        <div className='grid grid-cols-3 gap-8'>
+          <div>
+            <h4>$20</h4>
+            <hr />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div>
+            <h4>$50</h4>
+            <hr />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div>
+            <h4>$100</h4>
+            <hr />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div className='col-span-3 text-center'>
+            <button className='rounded-md py-2 px-4 bg-indigo-400'>Donate Now</button>
+          </div>
+        </div>
+        <div className='shadow-2xl w-full h-[400px] bg-indigo-400'>
+          <h1 className='text-center relative top-1/2 -translate-y-1/2'>
+            How Your Money Helps
+          </h1>
+        </div>
+      </div>
     </div>
   )
 }
+
+export default Donate
