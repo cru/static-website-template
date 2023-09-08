@@ -8,33 +8,57 @@ import Mission from 'src/components/Mission'
 import Services from 'src/components/Services'
 import Socials from 'src/components/Socials'
 import Stories from 'src/components/Stories'
+import Team from 'src/components/Team'
 import constants from 'src/constants'
 import api from 'src/lib/api'
 
 export const getStaticProps = async () => {
-  const res = await api.get('/announcements')
+  const announceRes = await api.get('/announcements')
+  const teamRes = await api.get('/people')
+  const people = []
+
+  for (let i = 0; i < teamRes.docs?.length; i++) {
+    const portrait = teamRes.docs[i].portrait
+
+    if (portrait) {
+      const { base64, img } = await getPlaiceholder(portrait?.url)
+
+      people.push({
+        ...teamRes.docs[i],
+        imageProps: {
+          src: img.src,
+          alt: portrait.name,
+          placeholder: 'blur',
+          blurDataURL: base64,
+        },
+      })
+    } else {
+      people.push({ ...teamRes.docs[i] })
+    }
+  }
 
   return {
     props: {
-      announcements: res.docs || [],
+      announcements: announceRes.docs || [],
+      people: people,
     },
-    revalidate: 21600, // 6 hours
+    revalidate: parseInt(process.env.NEXT_PUBLIC_REGENERATION_TIME),
   }
 }
 
 const Home = () => {
-  const aboutRef = useRef(null)
+  const servicesRef = useRef(null)
   const missionRef = useRef(null)
   const contactRef = useRef(null)
   const teamRef = useRef(null)
   const donateRef = useRef(null)
-  const partnersRef = useRef(null)
+
   const storiesRef = useRef(null)
 
   const scrollTo = (section) => {
     switch (section) {
-      case constants.pageSections.ABOUT:
-        aboutRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      case constants.pageSections.SERVICES:
+        servicesRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
         break
       case constants.pageSections.MISSION:
         missionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -42,17 +66,14 @@ const Home = () => {
       case constants.pageSections.CONTACT:
         contactRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
         break
-      case constants.pageSections.TEAM:
-        teamRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        break
       case constants.pageSections.DONATE:
         donateRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
         break
-      case constants.pageSections.PARTNERS:
-        partnersRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        break
       case constants.pageSections.STORIES:
         storiesRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        break
+      case constants.pageSections.TEAM:
+        teamRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
         break
       default:
         break
@@ -63,12 +84,12 @@ const Home = () => {
     <div className='space-y-32'>
       {/* <Header scrollTo={scrollTo} /> */}
       <Banner />
-      <Services scrollRef={aboutRef} />
-      <Mission scrollRef={missionRef} />
-      <Contact scrollRef={contactRef} />
-      {/* <Team teamRef={teamRef} /> */}
-      <Stories />
-      <Donate donateRef={donateRef} />
+      <Services forwardRef={servicesRef} />
+      <Mission forwardRef={missionRef} />
+      <Contact forwardRef={contactRef} />
+      <Stories forwardRef={storiesRef} />
+      <Team forwardRef={teamRef} />
+      <Donate forwardRef={donateRef} />
       <Socials />
       <Footer />
     </div>

@@ -46,6 +46,7 @@ const serviceItems = [
     />
     <div className='p-6'>
       <h3>Service 1</h3>
+      <hr />
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non.</p>
     </div>
   </div>,
@@ -59,6 +60,7 @@ const serviceItems = [
     />
     <div className='p-6'>
       <h3>Service 2</h3>
+      <hr />
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non.</p>
     </div>
   </div>,
@@ -72,6 +74,7 @@ const serviceItems = [
     />
     <div className='p-6'>
       <h3>Service 3</h3>
+      <hr />
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse finibus
         vehicula turpis, eu eleifend lorem scelerisque a. Quisque sed turpis.
