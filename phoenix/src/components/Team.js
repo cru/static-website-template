@@ -6,8 +6,8 @@ const Team = ({ forwardRef = null, team = [] }) => {
       <h1>Meet the Team</h1>
       <div className='grid md:grid-cols-2 grid-cols-1 gap-16 justify-items-center '>
         {team.map((item) => (
-          <div className='flex gap-4 content-center w-80'>
-            <div className='w-24 h-24' key={item.id}>
+          <div key={item.id} className='flex gap-4 content-center w-80'>
+            <div className='w-24 h-24'>
               <div className='relative h-full'>
                 <Image {...item.imageProps} fill className='object-cover rounded-md' />
               </div>

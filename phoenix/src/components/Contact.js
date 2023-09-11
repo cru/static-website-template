@@ -36,19 +36,19 @@ const Contact = ({ scrollRef }) => {
 const contactItems = [
   <div className='text-center space-y-2'>
     <h4>Email</h4>
-    <EnvelopeIcon className='h-12 w-12 m-auto text-indigo-400' />
+    <EnvelopeIcon className='h-12 w-12 m-auto text-purple-400' />
     <a href='mailto:email@domain.ca' className='block'>
       email@domain.ca
     </a>
   </div>,
   <div className='text-center space-y-2'>
     <h4>Phone/Fax</h4>
-    <PhoneIcon className='h-12 w-12 m-auto text-indigo-400' />
+    <PhoneIcon className='h-12 w-12 m-auto text-purple-400' />
     <span className='block'>Phone: 403-283-4449</span>
   </div>,
   <div className='text-center space-y-2'>
     <h4>Address</h4>
-    <MapPinIcon className='h-12 w-12 m-auto text-indigo-400' />
+    <MapPinIcon className='h-12 w-12 m-auto text-purple-400' />
     <span>123 Willow Street Havenbrook, Anytown 56789 Dreamland</span>
   </div>,
 ]

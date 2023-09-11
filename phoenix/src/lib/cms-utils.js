@@ -1,23 +1,22 @@
 import escapeHTML from 'escape-html'
-import { getPlaiceholder } from 'plaiceholder'
-import { Fragment } from 'react'
+// import { getPlaiceholder } from 'plaiceholder'
 
 const utils = {}
 
-utils.getImage = async (src = '') => {
-  const buffer = await fetch(src).then(async (res) =>
-    Buffer.from(await res.arrayBuffer())
-  )
-  const {
-    metadata: { height, width },
-    ...plaiceholder
-  } = await getPlaiceholder(buffer)
+// utils.getImage = async (src = '') => {
+//   const buffer = await fetch(src).then(async (res) =>
+//     Buffer.from(await res.arrayBuffer())
+//   )
+//   const {
+//     metadata: { height, width },
+//     ...plaiceholder
+//   } = await getPlaiceholder(buffer)
 
-  return {
-    ...plaiceholder,
-    img: { src, height, width },
-  }
-}
+//   return {
+//     ...plaiceholder,
+//     img: { src, height, width },
+//   }
+// }
 
 utils.serializeRichText = (children = []) =>
   children.map((node, i) => {
@@ -34,7 +33,7 @@ utils.serializeRichText = (children = []) =>
       if (node.strikethrough) text = <s key={i}>{text}</s>
       if (node.underline) text = <u key={i}>{text}</u>
 
-      return <Fragment key={i}>{text}</Fragment>
+      return <span key={i}>{text}</span>
     }
 
     switch (node.type) {
@@ -74,9 +73,6 @@ utils.serializeRichText = (children = []) =>
             {utils.serializeRichText(node.children)}
           </span>
         )
-
-      // case 'p':
-      //   return <p key={i}>{utils.serializeRichText(node.children)}</p>
       default:
         return <span key={i}>{utils.serializeRichText(node.children)}</span>
     }
@@ -107,6 +103,17 @@ utils.getAlignment = (alignment = '') => {
       return 'text-right'
     default:
       return 'text-left'
+  }
+}
+
+utils.renderBlock = (block = {}) => {
+  if (!block) {
+    return null
+  }
+
+  switch (block.blockType) {
+    case 'paragraph':
+      return <p>{block.paragraph}</p>
   }
 }
 

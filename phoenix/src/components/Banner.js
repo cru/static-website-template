@@ -5,7 +5,7 @@ import logoImg from 'public/images/logoipsum.svg'
 
 const Banner = () => {
   return (
-    <div className='w-full p-8 lg:h-content lg:min-h-[525px] lg:bg-gradient-to-r lg:from-gray-800 lg:from-10% lg:via-indigo-400 lg:via-55% lg:to-white lg:to-55% h-content h-min-[800px] bg-gradient-to-t from-white from-30% via-purple-400 via-30% to-indigo-400'>
+    <div className='w-full p-8 lg:h-content lg:min-h-[525px] lg:bg-gradient-to-r lg:from-gray-800 lg:from-10% lg:via-purple-400 lg:via-55% lg:to-white lg:to-55% h-content h-min-[800px] bg-gradient-to-t from-white from-30% via-purple-400 via-30% to-gray-800'>
       <div className='grid gap-8 items-center container layout h-full lg:grid-cols-2 lg:justify-items-start justify-items-center'>
         <div className='p-8 space-y-6'>
           <div className='flex items-center gap-4'>

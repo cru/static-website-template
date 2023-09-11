@@ -22,12 +22,12 @@ const Donate = ({ forwardRef = null }) => {
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </div>
           <div className='col-span-3 text-center'>
-            <button className='rounded-md py-2 px-4 bg-indigo-400 transition-all hover:scale-110'>
+            <button className='rounded-md py-2 px-4 bg-purple-400 transition-all hover:scale-110'>
               Donate Now
             </button>
           </div>
         </div>
-        <div className='shadow-2xl w-full h-[400px] bg-indigo-400'>
+        <div className='shadow-2xl w-full h-[400px] bg-purple-400'>
           <h1 className='text-center relative top-1/2 -translate-y-1/2'>
             How Your Money Helps
           </h1>

@@ -16,40 +16,43 @@ import utils from 'src/lib/cms-utils'
 export const getStaticProps = async () => {
   const announceRes = await api.get('/announcements')
   const teamRes = await api.get('/people')
+  const storiesRes = await api.get('/stories')
+  const announcements = announceRes.docs.filter((d) => d.status === 'published')
+  const team = teamRes.docs.filter((d) => d.status === 'published')
+  const stories = storiesRes.docs.filter((d) => d.status === 'published')
   const people = []
 
-  for (let i = 0; i < teamRes.docs?.length; i++) {
-    if (teamRes.docs[i].status == 'draft') continue
+  // for (let i = 0; i < team.length; i++) {
+  //   const portrait = team[i].portrait
+  //   if (portrait) {
+  //     const src = `${process.env.NEXT_PUBLIC_CMS_URL}${portrait.url}`
+  //     const { base64, img } = await utils.getImage(src)
 
-    const portrait = teamRes.docs[i].portrait
-    if (portrait) {
-      const src = `${process.env.NEXT_PUBLIC_CMS_URL}${portrait.url}`
-      const { base64, img } = await utils.getImage(src)
-
-      people.push({
-        ...teamRes.docs[i],
-        imageProps: {
-          src: src,
-          alt: portrait.name,
-          placeholder: 'blur',
-          blurDataURL: base64,
-        },
-      })
-    } else {
-      people.push({ ...teamRes.docs[i] })
-    }
-  }
+  //     people.push({
+  //       ...team[i],
+  //       imageProps: {
+  //         src: src,
+  //         alt: portrait.name,
+  //         placeholder: 'blur',
+  //         blurDataURL: base64,
+  //       },
+  //     })
+  //   } else {
+  //     people.push({ ...team[i] })
+  //   }
+  // }
 
   return {
     props: {
-      announcements: announceRes.docs || [],
+      announcements: announcements,
       people: people,
+      stories: stories,
     },
     revalidate: parseInt(process.env.NEXT_PUBLIC_REGENERATION_TIME),
   }
 }
 
-const Home = ({ announcements, people }) => {
+const Home = ({ announcements, people, stories }) => {
   const servicesRef = useRef(null)
   const missionRef = useRef(null)
   const contactRef = useRef(null)
@@ -89,7 +92,7 @@ const Home = ({ announcements, people }) => {
       <Services forwardRef={servicesRef} />
       <Mission forwardRef={missionRef} />
       <Contact forwardRef={contactRef} />
-      <Stories forwardRef={storiesRef} />
+      <Stories forwardRef={storiesRef} stories={stories} />
       <Team forwardRef={teamRef} team={people} />
       <Donate forwardRef={donateRef} />
       <Socials />
