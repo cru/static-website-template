@@ -31,7 +31,7 @@ const Stories = ({ forwardRef }) => {
           />
         </div>
         <div className='w-full'>
-          <h1>Patient Stories</h1>
+          <h1>Stories</h1>
           <hr />
           <Slider {...settings}>{stories}</Slider>
         </div>

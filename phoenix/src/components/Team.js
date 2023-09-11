@@ -2,23 +2,20 @@ import Image from 'next/image'
 
 const Team = ({ forwardRef = null, team = [] }) => {
   return (
-    <div ref={forwardRef} className='container layout text-center'>
-      <h1>Team</h1>
-      <div className='grid grid-cols-4 gap-8'>
+    <div ref={forwardRef} className='container layout text-center space-y-12 px-32'>
+      <h1>Meet the Team</h1>
+      <div className='grid grid-cols-2 gap-16 justify-items-center '>
         {team.map((item) => (
-          <div className='h-64' key={item.id}>
-            <div className='relative h-5/6'>
-              <Image
-                {...item.imageProps}
-                fill
-                sizes='(max-width: 768px) 50vw,
-              (max-width: 1200px) 33vw,
-              25vw'
-                className='object-contain'
-              />
+          <div className='flex gap-4 content-center w-80'>
+            <div className='w-24 h-24' key={item.id}>
+              <div className='relative h-full'>
+                <Image {...item.imageProps} fill className='object-cover rounded-md' />
+              </div>
             </div>
-            <h4 className='text-lg'>{`${item.firstName} ${item.lastName}`}</h4>
-            <span className='text-gray-500'>{item.description}</span>
+            <div className='text-left'>
+              <h4 className='text-sm'>{`${item.firstName} ${item.lastName}`}</h4>
+              <span className='text-xs text-gray-500'>{item.description}</span>
+            </div>
           </div>
         ))}
       </div>

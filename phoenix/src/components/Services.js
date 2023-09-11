@@ -23,7 +23,7 @@ const Services = ({ scrollRef }) => {
 
   return (
     <div ref={scrollRef} className='container layout text-center'>
-      <ScrollTrigger onEnter={() => setVisible(true)} onExit={() => setVisible(false)}>
+      <ScrollTrigger onEnter={() => setVisible(true)}>
         <h1 className='mb-6'>Services</h1>
         <div className='grid lg:grid-cols-2 gap-16'>
           {transitions((style, item) => (

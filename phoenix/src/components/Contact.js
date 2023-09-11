@@ -18,13 +18,15 @@ const Contact = ({ scrollRef }) => {
   })
 
   return (
-    <div ref={scrollRef} className='container layout text-center'>
-      <ScrollTrigger onEnter={() => setVisible(true)} onExit={() => setVisible(false)}>
-        <h1 className='mb-6'>Contact Us</h1>
-        <div className='grid lg:grid-cols-3 gap-16'>
-          {transitions((style, item) => (
-            <animated.div style={style}>{item}</animated.div>
-          ))}
+    <div ref={scrollRef} className='container layout text-center '>
+      <ScrollTrigger onEnter={() => setVisible(true)}>
+        <div className='space-y-12'>
+          <h1>Contact Us</h1>
+          <div className='grid lg:grid-cols-3 gap-16'>
+            {transitions((style, item) => (
+              <animated.div style={style}>{item}</animated.div>
+            ))}
+          </div>
         </div>
       </ScrollTrigger>
     </div>

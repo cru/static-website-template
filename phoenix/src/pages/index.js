@@ -19,8 +19,9 @@ export const getStaticProps = async () => {
   const people = []
 
   for (let i = 0; i < teamRes.docs?.length; i++) {
-    const portrait = teamRes.docs[i].portrait
+    if (teamRes.docs[i].status == 'draft') continue
 
+    const portrait = teamRes.docs[i].portrait
     if (portrait) {
       const src = `${process.env.NEXT_PUBLIC_CMS_URL}${portrait.url}`
       const { base64, img } = await utils.getImage(src)
@@ -54,7 +55,6 @@ const Home = ({ announcements, people }) => {
   const contactRef = useRef(null)
   const teamRef = useRef(null)
   const donateRef = useRef(null)
-
   const storiesRef = useRef(null)
 
   const scrollTo = (section) => {

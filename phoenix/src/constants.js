@@ -1,13 +1,12 @@
 const constants = {}
 
 constants.pageSections = {
+  SERVICES: 'services',
   MISSION: 'mission',
-  ABOUT: 'about',
   STORIES: 'stories',
   TEAM: 'team',
   CONTACT: 'contact',
   DONATE: 'donate',
-  PARTNERS: 'partners',
 }
 
 export default constants
