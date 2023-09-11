@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@heroicons/react": "^2.0.18",
+    "@plaiceholder/next": "^3.0.0",
     "@react-spring/web": "^9.7.3",
     "autoprefixer": "^10.4.15",
     "dayjs": "^1.11.9",

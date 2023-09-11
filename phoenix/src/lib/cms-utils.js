@@ -1,7 +1,23 @@
 import escapeHTML from 'escape-html'
+import { getPlaiceholder } from 'plaiceholder'
 import { Fragment } from 'react'
 
 const utils = {}
+
+utils.getImage = async (src = '') => {
+  const buffer = await fetch(src).then(async (res) =>
+    Buffer.from(await res.arrayBuffer())
+  )
+  const {
+    metadata: { height, width },
+    ...plaiceholder
+  } = await getPlaiceholder(buffer)
+
+  return {
+    ...plaiceholder,
+    img: { src, height, width },
+  }
+}
 
 utils.serializeRichText = (children = []) =>
   children.map((node, i) => {

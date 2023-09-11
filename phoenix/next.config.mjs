@@ -1,11 +1,13 @@
 /** @type {import('next').NextConfig} */
+import withPlaiceholder from '@plaiceholder/next'
+
 const nextConfig = {
   reactStrictMode: true,
   output: 'standalone',
   images: {
     formats: ['image/avif', 'image/webp'],
-    domains: ['localhost'],
+    domains: ['localhost', 'host.docker.internal'],
   },
 }
 
-module.exports = nextConfig
+export default withPlaiceholder(nextConfig)

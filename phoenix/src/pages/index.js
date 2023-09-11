@@ -11,6 +11,7 @@ import Stories from 'src/components/Stories'
 import Team from 'src/components/Team'
 import constants from 'src/constants'
 import api from 'src/lib/api'
+import utils from 'src/lib/cms-utils'
 
 export const getStaticProps = async () => {
   const announceRes = await api.get('/announcements')
@@ -21,12 +22,13 @@ export const getStaticProps = async () => {
     const portrait = teamRes.docs[i].portrait
 
     if (portrait) {
-      const { base64, img } = await getPlaiceholder(portrait?.url)
+      const src = `${process.env.NEXT_PUBLIC_CMS_URL}${portrait.url}`
+      const { base64, img } = await utils.getImage(src)
 
       people.push({
         ...teamRes.docs[i],
         imageProps: {
-          src: img.src,
+          src: src,
           alt: portrait.name,
           placeholder: 'blur',
           blurDataURL: base64,
@@ -46,7 +48,7 @@ export const getStaticProps = async () => {
   }
 }
 
-const Home = () => {
+const Home = ({ announcements, people }) => {
   const servicesRef = useRef(null)
   const missionRef = useRef(null)
   const contactRef = useRef(null)
@@ -88,7 +90,7 @@ const Home = () => {
       <Mission forwardRef={missionRef} />
       <Contact forwardRef={contactRef} />
       <Stories forwardRef={storiesRef} />
-      <Team forwardRef={teamRef} />
+      <Team forwardRef={teamRef} team={people} />
       <Donate forwardRef={donateRef} />
       <Socials />
       <Footer />
