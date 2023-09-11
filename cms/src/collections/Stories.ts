@@ -4,8 +4,8 @@ import ParagraphBlock from '../blocks/Paragraph'
 const Stories: CollectionConfig = {
   slug: 'stories',
   admin: {
-    defaultColumns: ['firstName', 'lastName', 'slug', 'status'],
-    useAsTitle: 'title',
+    defaultColumns: ['firstName', 'lastName', 'status'],
+    useAsTitle: 'firstName',
     group: 'Content',
   },
   access: {

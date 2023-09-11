@@ -11,7 +11,7 @@ import Stories from 'src/components/Stories'
 import Team from 'src/components/Team'
 import constants from 'src/constants'
 import api from 'src/lib/api'
-import utils from 'src/lib/cms-utils'
+import utils from 'src/lib/server-utils'
 
 export const getStaticProps = async () => {
   const announceRes = await api.get('/announcements')
@@ -22,25 +22,25 @@ export const getStaticProps = async () => {
   const stories = storiesRes.docs.filter((d) => d.status === 'published')
   const people = []
 
-  // for (let i = 0; i < team.length; i++) {
-  //   const portrait = team[i].portrait
-  //   if (portrait) {
-  //     const src = `${process.env.NEXT_PUBLIC_CMS_URL}${portrait.url}`
-  //     const { base64, img } = await utils.getImage(src)
+  for (let i = 0; i < team.length; i++) {
+    const portrait = team[i].portrait
+    if (portrait) {
+      const src = `${process.env.NEXT_PUBLIC_CMS_URL}${portrait.url}`
+      const { base64, img } = await utils.getImage(src)
 
-  //     people.push({
-  //       ...team[i],
-  //       imageProps: {
-  //         src: src,
-  //         alt: portrait.name,
-  //         placeholder: 'blur',
-  //         blurDataURL: base64,
-  //       },
-  //     })
-  //   } else {
-  //     people.push({ ...team[i] })
-  //   }
-  // }
+      people.push({
+        ...team[i],
+        imageProps: {
+          src: src,
+          alt: portrait.name,
+          placeholder: 'blur',
+          blurDataURL: base64,
+        },
+      })
+    } else {
+      people.push({ ...team[i] })
+    }
+  }
 
   return {
     props: {
