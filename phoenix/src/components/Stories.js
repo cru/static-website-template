@@ -20,7 +20,7 @@ const Stories = ({ forwardRef }) => {
       ref={forwardRef}
       className='w-full p-8 lg:h-content lg:h-min-[525px] lg:bg-gradient-to-r lg:from-white lg:from-45% lg:to-gray-100 lg:to-45% h-content h-min-[800px] bg-gradient-to-b from-white from-40% to-gray-100 to-40%'
     >
-      <div className='grid grid-cols-2 gap-8 items-center container layout h-full lg:grid-cols-2 lg:justify-items-start justify-items-center'>
+      <div className='grid gap-8 items-center container layout h-full lg:grid-cols-2 lg:justify-items-start justify-items-center'>
         <div className='relative w-full h-[400px] overflow-hidden shadow-2xl'>
           <Image
             src={hero2}
@@ -30,7 +30,7 @@ const Stories = ({ forwardRef }) => {
             className='object-cover '
           />
         </div>
-        <div className='w-full'>
+        <div className='w-full overflow-y-auto '>
           <h1>Stories</h1>
           <hr />
           <Slider {...settings}>{stories}</Slider>
@@ -41,7 +41,7 @@ const Stories = ({ forwardRef }) => {
 }
 
 const stories = [
-  <div key={'1'}>
+  <div key={'1'} className='overflow-y-auto'>
     <h4>Patient 1, 2016-2017</h4>
     <h5>University of Calgary, Canada</h5>
     <br />
@@ -57,7 +57,7 @@ const stories = [
       Suspendisse fermentum odio vel magna pharetra ornare.
     </p>
   </div>,
-  <div key={'2'}>
+  <div key={'2'} className='overflow-y-auto'>
     <h4>Patient 2, 2015-2016</h4>
     <h5>University of Alberta, Canada</h5>
     <br />
@@ -68,7 +68,7 @@ const stories = [
       aliquet diam.
     </p>
   </div>,
-  <div key={'3'}>
+  <div key={'3'} className='overflow-y-auto'>
     <h4>Patient 3, 2019-2020</h4>
     <h5>Foothills Medical Center, Canada</h5>
     <br />

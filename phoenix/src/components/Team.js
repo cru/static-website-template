@@ -4,7 +4,7 @@ const Team = ({ forwardRef = null, team = [] }) => {
   return (
     <div ref={forwardRef} className='container layout text-center space-y-12 px-32'>
       <h1>Meet the Team</h1>
-      <div className='grid grid-cols-2 gap-16 justify-items-center '>
+      <div className='grid md:grid-cols-2 grid-cols-1 gap-16 justify-items-center '>
         {team.map((item) => (
           <div className='flex gap-4 content-center w-80'>
             <div className='w-24 h-24' key={item.id}>
