@@ -9,6 +9,7 @@ import Services from 'src/components/Services'
 import Socials from 'src/components/Socials'
 import Stories from 'src/components/Stories'
 import Team from 'src/components/Team'
+import Announcements from 'src/components/Announcements'
 import constants from 'src/constants'
 import api from 'src/lib/api'
 import utils from 'src/lib/server-utils'
@@ -86,18 +87,20 @@ const Home = ({ announcements, people, stories }) => {
   }
 
   return (
-    <div className='space-y-32'>
-      {/* <Header scrollTo={scrollTo} /> */}
-      <Banner />
-      <Services forwardRef={servicesRef} />
-      <Mission forwardRef={missionRef} />
-      <Contact forwardRef={contactRef} />
-      <Stories forwardRef={storiesRef} stories={stories} />
-      <Team forwardRef={teamRef} team={people} />
-      <Donate forwardRef={donateRef} />
-      <Socials />
+    <>
+      <Announcements announcements={announcements} />
+      <div className='space-y-32'>
+        <Banner />
+        <Services forwardRef={servicesRef} />
+        <Mission forwardRef={missionRef} />
+        <Contact forwardRef={contactRef} />
+        <Stories forwardRef={storiesRef} stories={stories} />
+        <Team forwardRef={teamRef} team={people} />
+        <Donate forwardRef={donateRef} />
+        <Socials />
+      </div>
       <Footer />
-    </div>
+    </>
   )
 }
 

@@ -1,14 +1,16 @@
 import { Block } from 'payload/types'
 
 const ParagraphBlock: Block = {
-  slug: 'paragraph', // required
-  interfaceName: 'ParagraphBlock', // optional
+  slug: 'paragraph',
+  interfaceName: 'ParagraphBlock',
   fields: [
-    // required
     {
       name: 'paragraph',
-      type: 'textarea',
+      type: 'richText',
       required: true,
+      admin: {
+        elements: ['ol', 'ul', 'textAlign', 'link', 'blockquote'],
+      },
     },
   ],
 }

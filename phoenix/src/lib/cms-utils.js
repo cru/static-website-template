@@ -97,7 +97,7 @@ utils.renderBlock = (block = {}) => {
 
   switch (block.blockType) {
     case 'paragraph':
-      return <p>{block.paragraph}</p>
+      return <p>{utils.serializeRichText(block.paragraph)}</p>
   }
 }
 

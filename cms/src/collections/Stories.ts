@@ -33,14 +33,9 @@ const Stories: CollectionConfig = {
       required: true,
     },
     {
-      name: 'content', // required
-      type: 'blocks', // required
-      minRows: 1,
-      maxRows: 20,
-      blocks: [
-        // required
-        ParagraphBlock,
-      ],
+      name: 'content',
+      type: 'blocks',
+      blocks: [ParagraphBlock],
     },
     {
       name: 'status',
