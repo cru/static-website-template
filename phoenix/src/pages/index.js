@@ -12,7 +12,7 @@ import Team from 'src/components/Team'
 import Announcements from 'src/components/Announcements'
 import constants from 'src/constants'
 import api from 'src/lib/api'
-import utils from 'src/lib/server-utils'
+import serverUtils from 'src/lib/server-utils'
 
 export const getStaticProps = async () => {
   const announceRes = await api.get('/announcements')
@@ -27,7 +27,7 @@ export const getStaticProps = async () => {
     const portrait = team[i].portrait
     if (portrait) {
       const src = `${process.env.NEXT_PUBLIC_CMS_URL}${portrait.url}`
-      const { base64, img } = await utils.getImage(src)
+      const { base64, img } = await serverUtils.getImage(src)
 
       people.push({
         ...team[i],

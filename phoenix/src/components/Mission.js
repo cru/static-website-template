@@ -4,8 +4,8 @@ const Mission = ({ scrollRef }) => {
       ref={scrollRef}
       className='w-full p-8 lg:h-content lg:h-min-[525px] lg:bg-gradient-to-r lg:from-white lg:from-45% lg:to-gray-100 lg:to-45% h-content h-min-[800px] bg-gradient-to-b from-white from-40% to-gray-100 to-40%'
     >
-      <div className='grid gap-8 items-center container layout h-full lg:grid-cols-2 lg:justify-items-start justify-items-center'>
-        <div className='shadow-2xl w-full h-[400px] bg-purple-400'>
+      <div className='grid gap-8 items-center container section h-full lg:grid-cols-2 lg:justify-items-start justify-items-center'>
+        <div className='shadow-2xl w-full h-[400px] bg-brand text-white'>
           <h1 className='text-center relative top-1/2 -translate-y-1/2'>Our Mission</h1>
         </div>
         <div className='overflow-y-auto'>

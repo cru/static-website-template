@@ -23,9 +23,16 @@ const Announcements: CollectionConfig = {
       required: true,
     },
     {
+      name: 'banner',
+      type: 'relationship',
+      relationTo: 'media',
+      required: true,
+    },
+    {
       name: 'content',
       type: 'blocks',
       blocks: [ParagraphBlock],
+      required: true,
     },
     {
       name: 'author',

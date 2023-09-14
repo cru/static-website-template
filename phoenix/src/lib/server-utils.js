@@ -1,8 +1,8 @@
 import { getPlaiceholder } from 'plaiceholder'
 
-const utils = {}
+const serverUtils = {}
 
-utils.getImage = async (src = '') => {
+serverUtils.getImage = async (src = '') => {
   const buffer = await fetch(src).then(async (res) =>
     Buffer.from(await res.arrayBuffer())
   )
@@ -17,4 +17,4 @@ utils.getImage = async (src = '') => {
   }
 }
 
-export default utils
+export default serverUtils

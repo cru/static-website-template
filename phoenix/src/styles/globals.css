@@ -17,7 +17,7 @@
   }
 
   p {
-    @apply mb-2 mt-2;
+    @apply my-4;
   }
 
   a {
@@ -25,11 +25,11 @@
   }
 
   ul {
-    @apply list-disc list-outside;
+    @apply list-disc list-inside pl-3;
   }
 
   ol {
-    @apply list-decimal list-outside;
+    @apply list-decimal list-inside pl-3;
   }
 
   hr {
@@ -38,7 +38,7 @@
 }
 
 @layer components {
-  .layout {
+  .section {
     @apply px-4 mx-auto;
   }
 }

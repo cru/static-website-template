@@ -8,8 +8,13 @@ module.exports = {
     './src/lib/cms-utils.js',
   ],
   theme: {
-    fontFamily: {
-      header: ['"Roboto Mono"'],
+    extend: {
+      fontFamily: {
+        header: ['"Roboto Mono"'],
+      },
+      colors: {
+        brand: '#6b21a8',
+      },
     },
   },
 }

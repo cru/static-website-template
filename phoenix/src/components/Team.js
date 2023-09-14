@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 const Team = ({ forwardRef = null, team = [] }) => {
   return (
-    <div ref={forwardRef} className='container layout text-center space-y-12 px-32'>
+    <div ref={forwardRef} className='container section text-center space-y-12 px-32'>
       <h1>Meet the Team</h1>
       <div className='grid md:grid-cols-2 grid-cols-1 gap-16 justify-items-center '>
         {team.map((item) => (
