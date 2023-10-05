@@ -13,7 +13,7 @@ module.exports = {
         header: ['"Roboto Mono"'],
       },
       colors: {
-        brand: '#6b21a8',
+        brand: '#2563eb',
       },
     },
   },

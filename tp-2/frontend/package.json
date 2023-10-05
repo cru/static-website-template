@@ -1,5 +1,5 @@
 {
-  "name": "website-template-1",
+  "name": "website-template-2",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
@@ -32,6 +32,7 @@
     "pretty": "prettier --write \"./**/*.{js,jsx,json}\"",
     "lint": "next lint",
     "start": "next dev -p 3770",
+    "turbo": "next dev -p 3770 --turbo",
     "build": "next build",
     "serve": "next start"
   }

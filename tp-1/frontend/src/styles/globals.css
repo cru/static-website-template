@@ -38,6 +38,10 @@
 }
 
 @layer components {
+  .btn {
+    @apply rounded-md py-2 px-4 bg-brand text-white transition-all hover:scale-110
+  }
+
   .section {
     @apply px-4 mx-auto;
   }
