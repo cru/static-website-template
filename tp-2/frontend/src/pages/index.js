@@ -21,7 +21,7 @@ const Home = ({ announcements }) => {
   return (
     <>
       <Announcements announcements={announcements} />
-      <div className='pt-48 space-y-64'>
+      <div className='pt-48 space-y-48'>
         <Banner />
         <Services />
         <Stories />
