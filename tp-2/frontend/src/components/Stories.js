@@ -2,7 +2,10 @@ const Stories = () => {
   return (
     <div className='container section '>
       <section className='flex space-x-12 w-3/4 m-auto'>
-        <h2 className='mt-24'>What our customers are saying</h2>
+        <section className='mt-24'>
+          <span className='text-blue-500'>porttitor</span>
+          <h2>What our customers are saying</h2>
+        </section>
         <div className='grid lg:grid-cols-2 gap-16'>
           <section className='space-y-16 mt-16'>{storyLane1.map((e) => e)}</section>
           <section className='space-y-16'>{storyLane2.map((e) => e)}</section>

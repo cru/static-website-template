@@ -14,8 +14,11 @@ const Services = () => {
   })
 
   return (
-    <div className='container section text-center'>
-      <h2 className='mb-6'>Services</h2>
+    <div className='container section text-center space-y-12'>
+      <section>
+        <span className='text-blue-500'>justo eget magna fermentum</span>
+        <h2>Integer Vitae Justo eget Magna</h2>
+      </section>
       <div className='grid lg:grid-cols-3 gap-16'>
         {transitions((style, item) => (
           <animated.div style={style}>{item}</animated.div>

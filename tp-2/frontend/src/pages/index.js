@@ -3,6 +3,7 @@ import Footer from 'src/components/Footer'
 import Services from 'src/components/Services'
 import Stories from 'src/components/Stories'
 import Announcements from 'src/components/Announcements'
+import Metrics from 'src/components/Metrics'
 import api from 'src/lib/api'
 
 export const getStaticProps = async () => {
@@ -21,10 +22,11 @@ const Home = ({ announcements }) => {
   return (
     <>
       <Announcements announcements={announcements} />
-      <div className='pt-48 space-y-48'>
+      <div className='pt-48 pb-16 space-y-48'>
         <Banner />
         <Services />
         <Stories />
+        <Metrics />
       </div>
       <Footer />
     </>
