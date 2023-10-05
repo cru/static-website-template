@@ -1,55 +1,92 @@
-import Slider from 'react-slick'
-import Image from 'next/image'
-
-import hero2 from 'public/images/hero2.jpg'
-import cmsUtils from 'src/lib/cms-utils'
-
-const Stories = ({ forwardRef, stories = [] }) => {
-  const settings = {
-    arrows: false,
-    dots: true,
-    infinite: true,
-    autoplay: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    speed: 1000,
-    autoplaySpeed: 10000,
-  }
-
+const Stories = () => {
   return (
-    <div
-      ref={forwardRef}
-      className='w-full p-8 lg:h-content lg:h-min-[525px] lg:bg-gradient-to-r lg:from-white lg:from-45% lg:to-gray-100 lg:to-45% h-content h-min-[800px] bg-gradient-to-b from-white from-40% to-gray-100 to-40%'
-    >
-      <div className='grid gap-8 items-center container section h-full lg:grid-cols-2 lg:justify-items-start justify-items-center'>
-        <div className='relative w-full h-[400px] overflow-hidden shadow-2xl'>
-          <Image
-            src={hero2}
-            alt='empty'
-            fill
-            placeholder='blur'
-            className='object-cover '
-          />
+    <div className='container section '>
+      <section className='flex space-x-12 w-3/4 m-auto'>
+        <h2 className='mt-24'>What our customers are saying</h2>
+        <div className='grid lg:grid-cols-2 gap-16'>
+          <section className='space-y-16 mt-16'>{storyLane1.map((e) => e)}</section>
+          <section className='space-y-16'>{storyLane2.map((e) => e)}</section>
         </div>
-        <div className='w-full overflow-y-auto '>
-          <h1>Stories</h1>
-          <hr />
-          <Slider {...settings}>
-            {stories.map((story) => {
-              return (
-                <div key={story.id}>
-                  <h4>{`${story.firstName} ${story.lastName}, ${story.years}`}</h4>
-                  <h5 className='text-gray-500'>{story.location}</h5>
-                  <br />
-                  {story.content?.map((b) => cmsUtils.renderBlock(b))}
-                </div>
-              )
-            })}
-          </Slider>
-        </div>
-      </div>
+      </section>
     </div>
   )
 }
+
+const storyLane1 = [
+  <div
+    key={'story-1'}
+    className='rounded-xl shadow-xl bg-blue-50 w-full h-fit py-12 px-6'
+  >
+    <>
+      <span>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Nisl rhoncus mattis rhoncus urna
+        neque viverra justo.
+      </span>
+      <br />
+      <b className='float-right'>Lara Croft</b>
+    </>
+  </div>,
+  <div
+    key={'story-2'}
+    className='rounded-xl shadow-xl bg-blue-50 w-full h-fit py-12 px-6'
+  >
+    <>
+      <span>
+        Mauris sit amet massa vitae. Etiam dignissim diam quis enim lobortis scelerisque
+        fermentum. In aliquam sem fringilla ut morbi. Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.
+      </span>
+      <br />
+      <b className='float-right'>Beth Wilder</b>
+    </>
+  </div>,
+]
+
+const storyLane2 = [
+  <div
+    key={'story-3'}
+    className='rounded-xl shadow-xl bg-blue-50 w-full h-fit py-12 px-6'
+  >
+    <>
+      <span>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Nisl rhoncus mattis rhoncus urna
+        neque viverra justo.
+      </span>
+      <br />
+      <b className='float-right'>Jack Joyce</b>
+    </>
+  </div>,
+  <div
+    key={'story-4'}
+    className='rounded-xl shadow-xl bg-blue-50 w-full h-fit py-12 px-6'
+  >
+    <>
+      <span>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Nisl rhoncus mattis rhoncus urna
+        neque viverra justo.
+      </span>
+      <br />
+      <b className='float-right'>Johnny Silverhand</b>
+    </>
+  </div>,
+  <div
+    key={'story-5'}
+    className='rounded-xl shadow-xl bg-blue-50 w-full h-fit py-12 px-6'
+  >
+    <>
+      <span>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Nisl rhoncus mattis rhoncus urna
+        neque viverra justo.
+      </span>
+      <br />
+      <b className='float-right'>Alan Wake</b>
+    </>
+  </div>,
+]
 
 export default Stories
