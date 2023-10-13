@@ -1,0 +1,27 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+interface Props extends HTMLAttributes<'a'> {
+  text: string
+  href: string
+}
+
+const { text, href, ...attrs } = Astro.props
+---
+
+<a href={href} class='inline-flex' {...attrs}>
+  <span class='inline-flex items-center space-x-1 text-sm font-medium leading-6'>
+    <span>{text}</span>
+    <svg
+      class='h-5 w-5 text-gray-500'
+      viewBox='0 0 20 20'
+      fill='currentColor'
+      aria-hidden='true'
+    >
+      <path
+        fill-rule='evenodd'
+        d='M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z'
+        clip-rule='evenodd'></path>
+    </svg>
+  </span>
+</a>
