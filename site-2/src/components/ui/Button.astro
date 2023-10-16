@@ -1,0 +1,15 @@
+---
+interface Props {
+  text: string
+  type?: string
+  block?: boolean
+}
+
+const { text, type = 'default', block = false } = Astro.props
+---
+
+<button
+  class=`relative text-base font-semibold px-6 h-10 before:absolute before:inset-0 before:rounded-full before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max ${type === 'primary' ? 'before:bg-primary' : 'before:border before:border-transparent before:bg-primary/10 before:bg-gradient-to-b'} ${block ? 'w-full' : 'w-fit'}`
+>
+  <span class=`relative ${type === 'primary' ? 'text-white' : 'text-primary'}`>{text}</span>
+</button>

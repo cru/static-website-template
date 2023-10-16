@@ -2,14 +2,14 @@
 interface Props {
   text: string
   type?: string 
-  block?: bool
+  block?: boolean
 }
 
 const { text, type = 'default', block = false } = Astro.props
 ---
 
 <button
-  class=`font-medium rounded-lg text-sm text-center px-5 py-2.5 mr-2 mb-2 border border-black focus:ring-4 focus:ring-gray-800 ease-in-out duration-100 ${type === 'primary' ? 'text-white bg-black hover:bg-gray-700' : 'text-black bg-white hover:bg-gray-50'} ${block ? 'w-full' : 'w-fit'}`
+  class=`font-medium rounded-lg text-sm text-center cursor-pointer px-5 py-2.5 mr-2 mb-2 border border-black focus:ring-4 focus:ring-gray-800 ease-in-out duration-100 ${type === 'primary' ? 'text-white bg-black hover:bg-gray-700' : 'text-black bg-white hover:bg-gray-50'} ${block ? 'w-full' : 'w-fit'}`
 >
   {text}
 </button>
