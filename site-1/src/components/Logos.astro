@@ -1,4 +1,11 @@
 ---
+import { Picture } from 'astro:assets'
+import c1Image from '../assets/c1.jpg'
+import c2Image from '../assets/c2.jpg'
+import c3Image from '../assets/c3.jpg'
+import c4Image from '../assets/c2.jpg'
+import c5Image from '../assets/c1.jpg'
+
 interface Props {}
 
 const {} = Astro.props
@@ -8,40 +15,40 @@ const {} = Astro.props
   <div
     class='mx-auto grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:mx-0 lg:max-w-none lg:grid-cols-5'
   >
-    <img
+    <Picture
+      src={c1Image}
+      formats={['avif', 'webp']}
+      width={150}
+      alt='c1'
       class='col-span-2 max-h-16 w-full object-contain lg:col-span-1'
-      src='./company/c1.jpg'
-      alt='Transistor'
-      width='158'
-      height='48'
     />
-    <img
+    <Picture
+      src={c2Image}
+      formats={['avif', 'webp']}
+      width={150}
+      alt='c2'
       class='col-span-2 max-h-16 w-full object-contain lg:col-span-1'
-      src='./company/c2.jpg'
-      alt='Reform'
-      width='158'
-      height='48'
     />
-    <img
+    <Picture
+      src={c3Image}
+      formats={['avif', 'webp']}
+      width={150}
+      alt='c3'
       class='col-span-2 max-h-16 w-full object-contain lg:col-span-1'
-      src='./company/c3.jpg'
-      alt='Tuple'
-      width='158'
-      height='48'
     />
-    <img
-      class='col-span-2 max-h-16 w-full object-contain sm:col-start-2 lg:col-span-1'
-      src='./company/c2.jpg'
-      alt='SavvyCal'
-      width='158'
-      height='48'
+    <Picture
+      src={c4Image}
+      formats={['avif', 'webp']}
+      width={150}
+      alt='c4'
+      class='col-span-2 max-h-16 w-full object-contain lg:col-span-1'
     />
-    <img
-      class='col-span-2 col-start-2 max-h-16 w-full object-contain sm:col-start-auto lg:col-span-1'
-      src='./company/c1.jpg'
-      alt='Statamic'
-      width='158'
-      height='48'
+    <Picture
+      src={c5Image}
+      formats={['avif', 'webp']}
+      width={150}
+      alt='c5'
+      class='col-span-2 max-h-16 w-full object-contain lg:col-span-1'
     />
   </div>
 </div>

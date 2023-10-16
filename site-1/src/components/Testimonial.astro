@@ -1,6 +1,7 @@
 ---
 import { Picture } from 'astro:assets'
 import heroImage from '../assets/hero2.jpg'
+import logoImage from '../assets/logo-white.png'
 
 interface Props {}
 
@@ -20,7 +21,13 @@ const {} = Astro.props
     />
     <div class='absolute inset-0 bg-gray-900/70 mix-blend-multiply'></div>
     <div class='relative mx-auto max-w-2xl lg:mx-0'>
-      <img class='h-12 w-auto' src='./logo-128x128.png' alt='' />
+      <Picture
+        src={logoImage}
+        formats={['avif', 'webp']}
+        width={100}
+        alt='logo image'
+        class='h-12 w-auto'
+      />
       <figure>
         <blockquote class='mt-6 text-lg font-semibold text-white sm:text-xl sm:leading-8'>
           <p>
