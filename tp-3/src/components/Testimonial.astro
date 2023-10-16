@@ -1,0 +1,39 @@
+---
+import { Picture } from 'astro:assets'
+import heroImage from '../assets/hero2.jpg'
+
+interface Props {}
+
+const {} = Astro.props
+---
+
+<div class='mx-auto max-w-7xl sm:px-6 lg:px-8'>
+  <div
+    class='relative overflow-hidden px-6 py-20 shadow-xl sm:rounded-3xl sm:px-10 sm:py-24 md:px-12 lg:px-20'
+  >
+    <Picture
+      src={heroImage}
+      formats={['avif', 'webp']}
+      width={1600}
+      alt='Hero image'
+      class='absolute inset-0 h-full w-full object-cover'
+    />
+    <div class='absolute inset-0 bg-gray-900/70 mix-blend-multiply'></div>
+    <div class='relative mx-auto max-w-2xl lg:mx-0'>
+      <img class='h-12 w-auto' src='./logo-128x128.png' alt='' />
+      <figure>
+        <blockquote class='mt-6 text-lg font-semibold text-white sm:text-xl sm:leading-8'>
+          <p>
+            “Amet amet eget scelerisque tellus sit neque faucibus non eleifend. Integer eu
+            praesent at a. Ornare arcu gravida natoque erat et cursus tortor consequat at.
+            Vulputate gravida sociis enim nullam ultricies habitant malesuada lorem ac.”
+          </p>
+        </blockquote>
+        <figcaption class='mt-6 text-base text-white'>
+          <div class='font-semibold'>Judith Black</div>
+          <div class='mt-1'>CEO of Template</div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</div>

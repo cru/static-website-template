@@ -1,0 +1,26 @@
+---
+import BubbleBack2 from './ui/BubbleBack2.astro'
+import Button from './ui/Button.astro'
+import ExternalLink from './ui/ExternalLink.astro'
+import SectionHeading from './ui/SectionHeading.astro'
+
+interface Props {}
+
+const {} = Astro.props
+---
+
+<div class='px-6 lg:px-8'>
+  
+  <div class='mx-auto max-w-2xl text-center'>
+    <SectionHeading heading='Boost your productivity, start using our communication app.'>
+      <p>
+        Incididunt sint fugiat pariatur cupidatat consectetur sit cillum anim id veniam
+        aliqua proident excepteur commodo do ea.
+      </p>
+    </SectionHeading>
+    <div class='mt-10 flex items-center justify-center gap-x-6'>
+      <Button text='Get started' type='primary' />
+      <ExternalLink text='Learn more' href='#' />
+    </div>
+  </div>
+</div>

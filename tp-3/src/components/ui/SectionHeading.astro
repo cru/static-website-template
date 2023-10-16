@@ -1,0 +1,16 @@
+---
+interface Props {
+  heading: string
+  sup?: string
+}
+
+const { heading, sup } = Astro.props
+---
+
+<section class='space-y-4'>
+  <span class='text-brand-primary-500 text-lg font-bold'>{sup}</span>
+  <h2>{heading}</h2>
+  <div class='text-gray-600 text-sm'>
+    <slot />
+  </div>
+</section>
