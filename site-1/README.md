@@ -2,7 +2,7 @@
 
 Heavily inspired by: https://github.com/eavinti/astro-landing
 
-> ### [LIVE DEMO](https://main--jovial-melomakarona-ee338f.netlify.app/)
+> ### [LIVE DEMO](https://cru-template-site1.netlify.app/)
 
 ***
 
