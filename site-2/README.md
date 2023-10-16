@@ -8,7 +8,7 @@ A page template built with astro and tailwindcss using tailus blocks.
 Heavily inspired by: https://github.com/Tailus-UI/astro-theme
 
 > ### [LIVE DEMO](https://cru-template-site2.netlify.app/)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/3f0743b2-3619-4754-bfdf-94ee4e894c6a/deploy-status)](https://app.netlify.com/sites/cru-template-site2/deploys)
+> [![Netlify Status](https://api.netlify.com/api/v1/badges/3f0743b2-3619-4754-bfdf-94ee4e894c6a/deploy-status)](https://app.netlify.com/sites/cru-template-site2/deploys)
 
 ## 🚀 Project Structure
 
