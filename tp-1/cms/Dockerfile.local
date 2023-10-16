@@ -1,3 +1,0 @@
-FROM node:lts
-
-EXPOSE 3000

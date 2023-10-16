@@ -1,0 +1,26 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
+{
+  "name": "static-template",
+  "image": "node:lts",
+  "forwardPorts": [
+    3770
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dsznajder.es7-react-js-snippets",
+        "csstools.postcss",
+        "ecmel.vscode-html-css",
+        "wix.vscode-import-cost",
+        "bradlc.vscode-tailwindcss",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  },
+  "mounts": [
+    "source=node_modules,target=${containerWorkspaceFolder}/node_modules/.tmp,type=volume"
+  ],
+  "postCreateCommand": "yarn install"
+}
