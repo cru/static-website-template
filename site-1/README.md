@@ -3,7 +3,7 @@
 Heavily inspired by: https://github.com/eavinti/astro-landing
 
 > ### [LIVE DEMO](https://cru-template-site1.netlify.app/)
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4e11ec44-d664-4c3b-a394-3ab39893635f/deploy-status)](https://app.netlify.com/sites/cru-template-site1/deploys)
 ***
 
 ## 🚀 Project Structure
