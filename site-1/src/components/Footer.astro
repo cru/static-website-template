@@ -1,7 +1,7 @@
 ---
 import { Picture } from 'astro:assets'
 import logoImage from '../assets/logo-black.png'
-import BubbleBack1 from './ui/BubbleBack1.astro'
+import Background from './ui/Background.astro'
 
 interface Props {}
 
@@ -9,7 +9,7 @@ const {} = Astro.props
 ---
 
 <div class='px-6 lg:px-8'>
-  <BubbleBack1 />
+  <Background type={2} />
   <footer
     aria-labelledby='footer-heading'
     class='border-t border-gray-900/10 py-24 sm:py-32'

@@ -1,4 +1,11 @@
 ---
+import { Picture } from 'astro:assets'
+import avatar1 from '../assets/avatar1.jpg'
+import avatar2 from '../assets/avatar2.jpg'
+import avatar3 from '../assets/avatar3.jpg'
+import avatar4 from '../assets/avatar4.jpg'
+import avatar5 from '../assets/avatar5.jpg'
+import avatar6 from '../assets/avatar6.jpg'
 import Container from './ui/Container.astro'
 ---
 
@@ -16,18 +23,15 @@ import Container from './ui/Container.astro'
         class='aspect-auto p-8 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none'
       >
         <div class='flex gap-4'>
-          <img
-            class='w-12 h-12 rounded-full'
-            src='./images/avatars/avatar.webp'
-            alt='user avatar'
-            width='400'
-            height='400'
-            loading='lazy'
+          <Picture
+            src={avatar1}
+            formats={['avif', 'webp']}
+            width={100}
+            alt='avatar1'
+            class='w-12 h-12 rounded-full object-cover'
           />
           <div>
-            <h6 class='text-lg font-medium text-gray-700 dark:text-white'>
-              Daniella Doe
-            </h6>
+            <h6 class='text-lg font-medium text-gray-700 dark:text-white'>Daniel Doe</h6>
             <p class='text-sm text-gray-500 dark:text-gray-300'>Mobile dev</p>
           </div>
         </div>
@@ -44,13 +48,12 @@ import Container from './ui/Container.astro'
         class='aspect-auto p-8 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none'
       >
         <div class='flex gap-4'>
-          <img
-            class='w-12 h-12 rounded-full'
-            src='./images/avatars/avatar-1.webp'
-            alt='user avatar'
-            width='200'
-            height='200'
-            loading='lazy'
+          <Picture
+            src={avatar2}
+            formats={['avif', 'webp']}
+            width={100}
+            alt='avatar2'
+            class='w-12 h-12 rounded-full object-cover'
           />
           <div>
             <h6 class='text-lg font-medium text-gray-700 dark:text-white'>Jane doe</h6>
@@ -67,13 +70,12 @@ import Container from './ui/Container.astro'
         class='aspect-auto p-8 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none'
       >
         <div class='flex gap-4'>
-          <img
-            class='w-12 h-12 rounded-full'
-            src='./images/avatars/avatar-2.webp'
-            alt='user avatar'
-            width='200'
-            height='200'
-            loading='lazy'
+          <Picture
+            src={avatar3}
+            formats={['avif', 'webp']}
+            width={100}
+            alt='avatar3'
+            class='w-12 h-12 rounded-full object-cover'
           />
           <div>
             <h6 class='text-lg font-medium text-gray-700 dark:text-white'>Yanick Doe</h6>
@@ -90,16 +92,15 @@ import Container from './ui/Container.astro'
         class='aspect-auto p-8 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none'
       >
         <div class='flex gap-4'>
-          <img
-            class='w-12 h-12 rounded-full'
-            src='./images/avatars/avatar-3.webp'
-            alt='user avatar'
-            width='200'
-            height='200'
-            loading='lazy'
+          <Picture
+            src={avatar4}
+            formats={['avif', 'webp']}
+            width={100}
+            alt='avatar4'
+            class='w-12 h-12 rounded-full object-cover'
           />
           <div>
-            <h6 class='text-lg font-medium text-gray-700 dark:text-white'>Jane Doe</h6>
+            <h6 class='text-lg font-medium text-gray-700 dark:text-white'>Janice Doe</h6>
             <p class='text-sm text-gray-500 dark:text-gray-300'>Mobile dev</p>
           </div>
         </div>
@@ -113,13 +114,12 @@ import Container from './ui/Container.astro'
         class='aspect-auto p-8 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none'
       >
         <div class='flex gap-4'>
-          <img
-            class='w-12 h-12 rounded-full'
-            src='./images/avatars/avatar-4.webp'
-            alt='user avatar'
-            width='200'
-            height='200'
-            loading='lazy'
+          <Picture
+            src={avatar5}
+            formats={['avif', 'webp']}
+            width={100}
+            alt='avatar5'
+            class='w-12 h-12 rounded-full object-cover'
           />
           <div>
             <h6 class='text-lg font-medium text-gray-700 dark:text-white'>Andy Doe</h6>
@@ -136,13 +136,12 @@ import Container from './ui/Container.astro'
         class='aspect-auto p-8 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none'
       >
         <div class='flex gap-4'>
-          <img
-            class='w-12 h-12 rounded-full'
-            src='./images/avatars/avatar-2.webp'
-            alt='user avatar'
-            width='400'
-            height='400'
-            loading='lazy'
+          <Picture
+            src={avatar6}
+            formats={['avif', 'webp']}
+            width={100}
+            alt='avatar6'
+            class='w-12 h-12 rounded-full object-cover'
           />
           <div>
             <h6 class='text-lg font-medium text-gray-700 dark:text-white'>Yanndy Doe</h6>

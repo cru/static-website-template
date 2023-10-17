@@ -1,4 +1,11 @@
 ---
+import { Picture } from 'astro:assets'
+import avatar1 from '../assets/avatar1.jpg'
+import avatar2 from '../assets/avatar2.jpg'
+import avatar3 from '../assets/avatar3.jpg'
+import avatar4 from '../assets/avatar4.jpg'
+import avatar5 from '../assets/avatar5.jpg'
+import avatar6 from '../assets/avatar6.jpg'
 import Container from './ui/Container.astro'
 import Button from './ui/Button.astro'
 ---
@@ -20,45 +27,40 @@ import Button from './ui/Button.astro'
   <Container>
     <div class='relative'>
       <div class='flex items-center justify-center -space-x-2'>
-        <img
-          loading='lazy'
-          width='400'
-          height='400'
-          src='./images/avatars/avatar.webp'
-          alt='member photo'
-          class='h-8 w-8 rounded-full object-cover'
+        <Picture
+          src={avatar1}
+          formats={['avif', 'webp']}
+          width={100}
+          alt='avatar1'
+          class='w-8 h-8 rounded-full object-cover'
         />
-        <img
-          loading='lazy'
-          width='200'
-          height='200'
-          src='./images/avatars/avatar-2.webp'
-          alt='member photo'
-          class='h-12 w-12 rounded-full object-cover'
+        <Picture
+          src={avatar2}
+          formats={['avif', 'webp']}
+          width={100}
+          alt='avatar2'
+          class='w-12 h-12 rounded-full object-cover'
         />
-        <img
-          loading='lazy'
-          width='200'
-          height='200'
-          src='./images/avatars/avatar-3.webp'
-          alt='member photo'
-          class='z-10 h-16 w-16 rounded-full object-cover'
+        <Picture
+          src={avatar3}
+          formats={['avif', 'webp']}
+          width={100}
+          alt='avatar3'
+          class='relative z-10 w-16 h-16 rounded-full object-cover'
         />
-        <img
-          loading='lazy'
-          width='200'
-          height='200'
-          src='./images/avatars/avatar-4.webp'
-          alt='member photo'
-          class='relative h-12 w-12 rounded-full object-cover'
+        <Picture
+          src={avatar4}
+          formats={['avif', 'webp']}
+          width={100}
+          alt='avatar4'
+          class='w-12 h-12 rounded-full object-cover'
         />
-        <img
-          loading='lazy'
-          width='200'
-          height='200'
-          src='./images/avatars/avatar-1.webp'
-          alt='member photo'
-          class='h-8 w-8 rounded-full object-cover'
+        <Picture
+          src={avatar5}
+          formats={['avif', 'webp']}
+          width={100}
+          alt='avatar5'
+          class='w-8 h-8 rounded-full object-cover'
         />
       </div>
       <div class='mt-6 m-auto space-y-6 md:w-8/12 lg:w-7/12'>
@@ -72,8 +74,8 @@ import Button from './ui/Button.astro'
           Interfaces.
         </p>
         <div class='flex flex-wrap justify-center gap-6'>
-          <Button text='Get started' type='primary'/>
-          <Button text='More about' />
+          <Button text='Get started' type='primary' href='#' />
+          <Button text='More about' href='#' />
         </div>
       </div>
     </div>
