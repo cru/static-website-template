@@ -1,0 +1,45 @@
+---
+import { Picture } from 'astro:assets'
+import b1 from '../assets/b1.png'
+import b2 from '../assets/b2.png'
+import b3 from '../assets/b3.png'
+import Container from './ui/Container.astro'
+import Title from './ui/Title.astro'
+---
+
+<section>
+  <Container className='space-y-8'>
+    <div class='text-center max-w-3xl mx-auto'>
+      <Title>Trusted by companies like</Title>
+    </div>
+    <div class='flex justify-center flex-wrap gap-4'>
+      <div class='p-4 sm:p-5 rounded-xl bg-body border border-box-border group'>
+        <Picture
+          src={b1}
+          formats={['avif', 'webp']}
+          width={300}
+          alt='b1 image'
+          class='h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105'
+        />
+      </div>
+      <div class='p-4 sm:p-5 rounded-xl bg-body border border-box-border group'>
+        <Picture
+          src={b2}
+          formats={['avif', 'webp']}
+          width={300}
+          alt='b2 image'
+          class='h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105'
+        />
+      </div>
+      <div class='p-4 sm:p-5 rounded-xl bg-body border border-box-border group'>
+        <Picture
+          src={b3}
+          formats={['avif', 'webp']}
+          width={300}
+          alt='b3 image'
+          class='h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105'
+        />
+      </div>
+    </div>
+  </Container>
+</section>
