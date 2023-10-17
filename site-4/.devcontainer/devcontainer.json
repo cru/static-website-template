@@ -1,0 +1,22 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
+{
+  "name": "static-template",
+  "image": "node:lts",
+  "forwardPorts": [
+    4321
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ecmel.vscode-html-css",
+        "bradlc.vscode-tailwindcss",
+        "astro-build.astro-vscode"
+      ]
+    }
+  },
+  "mounts": [
+    "source=node_modules,target=${containerWorkspaceFolder}/node_modules/.tmp,type=volume"
+  ],
+  "postCreateCommand": "yarn install"
+}

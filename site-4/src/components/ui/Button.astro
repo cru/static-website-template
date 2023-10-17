@@ -1,0 +1,17 @@
+---
+interface Props {
+  text: string
+  href: string
+  type?: 'primary' | 'default'
+  block?: boolean
+}
+
+const { text, href, type = 'default', block = false } = Astro.props
+---
+
+<a
+  href={href}
+  class=`custom-button-colored w-64 sm:w-52 h-12 mr-0 sm:mr-4 lg:mr-6 mb-2 sm:mb-0 ${type === 'primary' ? 'text-white bg-black hover:bg-gray-700' : 'text-black bg-white hover:bg-gray-50'} ${block ? 'w-full' : 'w-fit'}`
+>
+  {text}
+</a>

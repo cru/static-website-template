@@ -1,9 +1,8 @@
 # Astro TEMPLATE
 
-Heavily inspired by: https://github.com/Johnkat-Mj/agency-landing-page-Astrojs
+Heavily inspired by: https://github.com/matt765/Tailcast
 
-> ### [LIVE DEMO](https://cru-template-site3.netlify.app/)
-> [![Netlify Status](https://api.netlify.com/api/v1/badges/69123a82-44bc-4936-b79e-bb3de2d6a49b/deploy-status)](https://app.netlify.com/sites/cru-template-site3/deploys)
+> ### [LIVE DEMO](https://cru-template-site4.netlify.app/)
 
 ## 🚀 Project Structure
 
@@ -16,10 +15,10 @@ Inside of your Astro project, you'll see the following folders and files:
 ├── src/
 │   ├── assets/
 │   ├── components/
-│   │   └── Faq.astro
-│   │   └── Footer.astro
-│   │   └── Hero.astro
-│   │   └── Pricing.astro
+│   │   └── Faq.jsx
+│   │   └── Footer.jsx
+│   │   └── Hero.jsx
+│   │   └── Pricing.jsx
 │   ├── layouts/
 │   │   └── Layout.astro
 │   └── pages/
