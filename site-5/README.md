@@ -3,6 +3,15 @@
 Heavily inspired by: https://github.com/surjithctly/astroship
 
 > ### [LIVE DEMO](https://cru-template-site5.netlify.app/)
+> [![Netlify Status](https://api.netlify.com/api/v1/badges/a4e94886-6186-4242-9cdd-486bcd7a815d/deploy-status)](https://app.netlify.com/sites/cru-template-site5/deploys)
+
+
+## Features
+This template features examples of using Astro Content Collections to create dynamic pages using Markdown. This is a super simple and fast way to generate pages that conform to a predetermined style. 
+
+Writing content in Markdown is way quicker than writing in HTML. This is perfect for announcements and blog post pages. 
+
+Content Collections can also be used for any list-type data such as Team members.
 
 
 ## 🚀 Project Structure
