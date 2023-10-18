@@ -2,8 +2,8 @@
 
 Heavily inspired by: https://github.com/Tailus-UI/astro-theme
 
-> ### [LIVE DEMO](https://cru-template-tailus.netlify.app/)
-> [![Netlify Status](https://api.netlify.com/api/v1/badges/3f0743b2-3619-4754-bfdf-94ee4e894c6a/deploy-status)](https://app.netlify.com/sites/cru-template-tailus/deploys)
+> ### [LIVE DEMO](https://cru-template-astrolus.netlify.app/)
+> [![Netlify Status](https://api.netlify.com/api/v1/badges/3f0743b2-3619-4754-bfdf-94ee4e894c6a/deploy-status)](https://app.netlify.com/sites/cru-template-astrolus/deploys)
 
 ## 🚀 Project Structure
 
