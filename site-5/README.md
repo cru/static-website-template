@@ -1,9 +1,9 @@
 # Astro TEMPLATE
 
-Heavily inspired by: https://github.com/matt765/Tailcast
+Heavily inspired by: https://github.com/surjithctly/astroship
 
-> ### [LIVE DEMO](https://cru-template-site4.netlify.app/)
-> [![Netlify Status](https://api.netlify.com/api/v1/badges/2c5fd39c-9c77-45cd-b2cc-b72197ff00a1/deploy-status)](https://app.netlify.com/sites/cru-template-site4/deploys)
+> ### [LIVE DEMO](https://cru-template-site5.netlify.app/)
+
 
 ## 🚀 Project Structure
 
