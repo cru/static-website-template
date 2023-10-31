@@ -1,17 +1,19 @@
 ---
-interface Props {
+import type { HTMLAttributes } from 'astro/types'
+
+interface Props extends HTMLAttributes<'a'> {
   text: string
-  href: string
+  href?: string
   type?: string
   block?: boolean
 }
 
-const { text, href, type = 'default', block = false } = Astro.props
+const { text, href, type = 'default', block = false, ...attrs } = Astro.props
 ---
 
 <a
   href={href}
-  class=`font-medium rounded-lg text-sm text-center cursor-pointer px-5 py-2.5 mr-2 mb-2 border border-black focus:ring-4 focus:ring-gray-800 ease-in-out duration-100 ${type === 'primary' ? 'text-white bg-black hover:bg-gray-700' : 'text-black bg-white hover:bg-gray-50'} ${block ? 'w-full' : 'w-fit'}`
+  class=`block font-medium rounded-lg text-sm text-center cursor-pointer px-5 py-2.5 mr-2 mb-2 border border-black focus:ring-4 focus:ring-gray-800 ease-in-out duration-100 ${type === 'primary' ? 'text-white bg-black hover:bg-gray-700' : 'text-black bg-white hover:bg-gray-50'} ${block ? 'w-full' : 'w-fit'}`
 >
   {text}
 </a>
